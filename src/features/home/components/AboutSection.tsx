@@ -4,6 +4,7 @@ import aboutSmall from '@/assets/images/home/about-img1-hm2.webp'
 import aboutMain from '@/assets/images/home/about-img-hm2.webp'
 import passports from '@/assets/images/home/visa-book-img.png'
 import { Counter, ImageReveal, PillLink, Reveal, SectionHeading } from '@/components/marketing'
+import { useStat } from '@/features/site-settings'
 
 const features: { icon: LucideIcon; title: string; body: string }[] = [
   {
@@ -24,6 +25,9 @@ const promises = [
 ]
 
 export function AboutSection() {
+  const counselors = useStat('counselors')
+  const universities = useStat('universities')
+
   return (
     <section aria-label="About us" className="relative overflow-hidden bg-white section-y">
       <div className="container-site grid items-center gap-14 lg:grid-cols-[0.55fr_0.45fr] lg:gap-[60px]">
@@ -44,16 +48,19 @@ export function AboutSection() {
           >
             <div className="rounded-2xl bg-ink p-5 text-white shadow-card sm:p-6">
               <Counter
-                value={80}
-                suffix="+"
+                value={counselors?.value ?? 0}
+                suffix={counselors?.suffix ?? ''}
                 className="text-[34px] leading-none font-bold sm:text-[40px]"
               />
               <h3 className="mt-3 text-lg font-bold text-white sm:text-[22px]">
                 Expert Study Abroad Counselors
               </h3>
-              <p className="mt-4 border-t border-line-light pt-4 text-[15px]">
-                50+ Global Partner Universities
-              </p>
+              {universities && (
+                <p className="mt-4 border-t border-line-light pt-4 text-[15px]">
+                  {universities.value}
+                  {universities.suffix} {universities.label}
+                </p>
+              )}
             </div>
           </Reveal>
 

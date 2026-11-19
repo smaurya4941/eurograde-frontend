@@ -16,15 +16,7 @@ import it from '@/assets/images/flags/it-ico.svg'
 import nz from '@/assets/images/flags/nz-ico.svg'
 import uk from '@/assets/images/flags/uk-ico.svg'
 import usa from '@/assets/images/flags/usa-ico.svg'
-import bolognaUni from '@/assets/images/universities/bologna.webp'
-import cologne from '@/assets/images/universities/cologne.webp'
-import freiburg from '@/assets/images/universities/freiburg.webp'
-import hamburg from '@/assets/images/universities/hamburg.webp'
-import polimi from '@/assets/images/universities/polimi.webp'
-import sapienza from '@/assets/images/universities/sapienza.webp'
-import stuttgart from '@/assets/images/universities/stuttgart.webp'
-import unimi from '@/assets/images/universities/unimi.webp'
-import type { Destination, StudyDestination, University } from '../types'
+import type { Destination, StudyDestination } from '../types'
 
 export const flags = { au, ca, de, eu, ie, it, nz, uk, usa }
 
@@ -49,16 +41,4 @@ export const featuredCountries: Destination[] = [
   { name: 'Milan', flag: it },
   { name: 'Frankfurt', flag: de },
   { name: 'Bologna', flag: it },
-]
-
-/** Partner public universities (logos from eurogrades.com). */
-export const universities: University[] = [
-  { name: 'University of Cologne', country: 'Germany', logo: cologne },
-  { name: 'Universität Hamburg', country: 'Germany', logo: hamburg },
-  { name: 'University of Stuttgart', country: 'Germany', logo: stuttgart },
-  { name: 'University of Freiburg', country: 'Germany', logo: freiburg },
-  { name: 'University of Bologna', country: 'Italy', logo: bolognaUni },
-  { name: 'Sapienza University of Rome', country: 'Italy', logo: sapienza },
-  { name: 'Politecnico di Milano', country: 'Italy', logo: polimi },
-  { name: 'University of Milan', country: 'Italy', logo: unimi },
 ]

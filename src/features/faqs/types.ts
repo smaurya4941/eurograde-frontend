@@ -1,5 +1,12 @@
 /** Mirrors App\Enums\FaqCategory. */
-export type FaqCategory = 'students' | 'immigration'
+export type FaqCategory =
+  | 'students'
+  | 'immigration'
+  | 'germany'
+  | 'italy'
+  | 'ielts'
+  | 'german-language'
+  | 'italian-language'
 
 /** Mirrors App\Http\Resources\V1\FaqResource. */
 export interface Faq {

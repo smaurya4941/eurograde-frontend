@@ -42,12 +42,6 @@ export const reasons = [
   },
 ]
 
-export const stats = [
-  { value: 80, suffix: '+', label: 'Expert Counselors' },
-  { value: 300, suffix: '+', label: 'Students Studying Abroad' },
-  { value: 50, suffix: '+', label: 'Global Partner Universities' },
-]
-
 /** Our two study countries and their top student cities, laid out in three rows. */
 export const ctaCountries = [
   [

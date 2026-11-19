@@ -2,11 +2,9 @@ import { paths } from '@/app/router/paths'
 import teamBg from '@/assets/images/backgrounds/team-bg.webp'
 import { SocialIcon } from '@/components/icons/SocialIcon'
 import { ContentError, PillLink, Reveal, SectionHeading, Skeleton } from '@/components/marketing'
-import { socials as siteSocials } from '@/config/site'
+import { socialLabels } from '@/config/site'
 import { useTeamMembers, type TeamMember } from '@/features/team'
 import { cn } from '@/lib/cn'
-
-const networkLabels = Object.fromEntries(siteSocials.map((s) => [s.network, s.label]))
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
@@ -39,7 +37,7 @@ function TeamCard({ member }: { member: TeamMember }) {
                 href={s.url}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${member.name} on ${networkLabels[s.network]}`}
+                aria-label={`${member.name} on ${socialLabels[s.network]}`}
                 className="flex size-9 items-center justify-center rounded-full bg-white text-brand-600 transition-colors hover:bg-ink hover:text-white"
               >
                 <SocialIcon network={s.network} className="size-4" />

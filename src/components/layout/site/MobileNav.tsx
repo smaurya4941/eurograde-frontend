@@ -5,7 +5,8 @@ import { Logo } from '@/components/brand/Logo'
 import { SocialIcon } from '@/components/icons/SocialIcon'
 import { PillLink } from '@/components/marketing'
 import { paths } from '@/app/router/paths'
-import { contact, socials, type NavItem } from '@/config/site'
+import type { NavItem } from '@/config/site'
+import { useContact, useSocials } from '@/features/site-settings'
 import { cn } from '@/lib/cn'
 
 /** Hamburger button + slide-in drawer navigation (below lg). */
@@ -13,6 +14,8 @@ export function MobileNav({ items }: { items: NavItem[] }) {
   const [open, setOpen] = useState(false)
   const [expanded, setExpanded] = useState<string | null>(null)
   const drawerId = useId()
+  const contact = useContact()
+  const socials = useSocials()
   const close = () => setOpen(false)
 
   // Lock page scroll and allow Escape to close while the drawer is open.

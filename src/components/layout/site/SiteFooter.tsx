@@ -4,19 +4,22 @@ import footerBg from '@/assets/images/backgrounds/footer-bg.webp'
 import { Logo } from '@/components/brand/Logo'
 import { SocialIcon } from '@/components/icons/SocialIcon'
 import { env } from '@/config/env'
-import { contact, footerColumns, legalLinks, socials } from '@/config/site'
+import { footerColumns, legalLinks } from '@/config/site'
+import { useContact, useSocials } from '@/features/site-settings'
 import { NewsletterForm } from './NewsletterForm'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
-const contactItems: { icon: LucideIcon; label: string; value: string; href?: string }[] = [
-  { icon: Phone, label: 'Call Us on', value: contact.phone, href: contact.phoneHref },
-  { icon: Mail, label: 'Reach out', value: contact.email, href: contact.emailHref },
-  { icon: MapPin, label: 'Location', value: contact.address },
-  { icon: Clock, label: 'Working Hours', value: contact.hours },
-]
-
 export function SiteFooter() {
+  const contact = useContact()
+  const socials = useSocials()
+  const contactItems: { icon: LucideIcon; label: string; value: string; href?: string }[] = [
+    { icon: Phone, label: 'Call Us on', value: contact.phone, href: contact.phoneHref },
+    { icon: Mail, label: 'Reach out', value: contact.email, href: contact.emailHref },
+    { icon: MapPin, label: 'Location', value: contact.address },
+    { icon: Clock, label: 'Working Hours', value: contact.hours },
+  ]
+
   return (
     <footer
       className="relative overflow-hidden bg-ink bg-size-[100%_auto] bg-bottom bg-no-repeat text-white"

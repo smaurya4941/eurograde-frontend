@@ -9,6 +9,8 @@ export const paths = {
   about: '/about',
   services: '/services',
   countries: '/countries',
+  /** Route pattern; build links with `countryHref(slug)`. */
+  country: '/countries/:slug',
   blog: '/blog',
   /** Route pattern; build links with `blogPostHref(slug)`. */
   blogPost: '/blog/:slug',

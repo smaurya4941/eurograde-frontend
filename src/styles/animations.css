@@ -186,6 +186,40 @@
   background: var(--color-brand-600);
 }
 
+/* ---------- Swiper bar pagination (testimonials review slider) ---------- */
+.swiper.reviews-swiper--paged {
+  --swiper-pagination-bottom: 0px;
+  padding-bottom: 70px;
+}
+.reviews-swiper .swiper-pagination {
+  display: flex;
+  justify-content: center;
+}
+.reviews-swiper .swiper-pagination-bullet {
+  width: 48px;
+  height: 6px;
+  margin: 0 !important;
+  border-radius: 0;
+  background: rgb(37 99 235 / 0.2);
+  opacity: 1;
+  transition: background-color 0.35s ease;
+}
+.reviews-swiper .swiper-pagination-bullet:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.reviews-swiper .swiper-pagination-bullet:last-child {
+  border-radius: 0 6px 6px 0;
+}
+.reviews-swiper .swiper-pagination-bullet-active {
+  border-radius: 6px;
+  background: var(--color-brand-600);
+}
+@media (min-width: 768px) {
+  .reviews-swiper .swiper-pagination-bullet {
+    width: 96px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal],
   .split-char,

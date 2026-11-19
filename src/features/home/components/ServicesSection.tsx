@@ -4,11 +4,17 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { paths } from '@/app/router/paths'
 import serviceBg from '@/assets/images/backgrounds/service-bg.webp'
-import { ArrowLink, InlineCta, Reveal, SectionHeading } from '@/components/marketing'
+import {
+  ArrowLink,
+  ContentError,
+  InlineCta,
+  Reveal,
+  SectionHeading,
+  Skeleton,
+} from '@/components/marketing'
+import { useServices, type Service } from '@/features/services'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { ctaAvatars } from '../data/people'
-import { services } from '../data/services'
-import type { Service } from '../types'
 
 function ServiceCard({ service }: { service: Service }) {
   return (
@@ -16,7 +22,7 @@ function ServiceCard({ service }: { service: Service }) {
       <div className="flex items-center gap-3 border-b border-line pb-5">
         <span className="flex size-[52px] shrink-0 items-center justify-center rounded-full bg-brand-600 transition-colors duration-500 group-hover:bg-ink">
           <img
-            src={service.icon}
+            src={service.icon_url ?? undefined}
             alt=""
             aria-hidden="true"
             className="size-7 brightness-0 invert"
@@ -30,7 +36,7 @@ function ServiceCard({ service }: { service: Service }) {
       </ArrowLink>
       <div className="img-shine mt-6 overflow-hidden rounded-xl">
         <img
-          src={service.image}
+          src={service.image_url ?? undefined}
           alt=""
           loading="lazy"
           className="aspect-[398/317] w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -40,10 +46,66 @@ function ServiceCard({ service }: { service: Service }) {
   )
 }
 
-export function ServicesSection() {
+function ServicesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
   const reducedMotion = usePrefersReducedMotion()
+  const { data: services, isPending, isError, refetch } = useServices()
 
+  if (isPending) {
+    return (
+      <div
+        aria-busy="true"
+        aria-label="Loading services"
+        className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {[0, 1, 2].map((i) => (
+          <Skeleton key={i} className="h-[520px] bg-white/10" />
+        ))}
+      </div>
+    )
+  }
+
+  if (isError) {
+    return (
+      <ContentError what="services" tone="dark" className="mt-12" onRetry={() => void refetch()} />
+    )
+  }
+
+  return (
+    <Reveal className="mt-12">
+      <Swiper
+        modules={[A11y, Autoplay]}
+        loop={services.length > 3}
+        speed={800}
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
+        autoplay={
+          reducedMotion
+            ? false
+            : { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }
+        }
+        onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        className="overflow-visible! lg:overflow-hidden!"
+      >
+        {services.map((service) => (
+          <SwiperSlide key={service.id} className="h-auto!">
+            <ServiceCard service={service} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {/* Progress bar: fills as the carousel advances through the services. */}
+      <div className="swiper-progress mt-10" aria-hidden="true">
+        <span
+          className="swiper-pagination-progressbar-fill transition-transform duration-700"
+          style={{ transform: `scaleX(${(activeIndex + 1) / Math.max(services.length, 1)})` }}
+        />
+      </div>
+    </Reveal>
+  )
+}
+
+export function ServicesSection() {
   return (
     <section
       aria-label="Our services"
@@ -63,36 +125,7 @@ export function ServicesSection() {
           description="From admission to Germany’s and Italy’s top public universities to IELTS prep and language courses, EuroGrades supports you at every stage of your study abroad journey."
         />
 
-        <Reveal className="mt-12">
-          <Swiper
-            modules={[A11y, Autoplay]}
-            loop
-            speed={800}
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
-            autoplay={
-              reducedMotion
-                ? false
-                : { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }
-            }
-            onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            className="overflow-visible! lg:overflow-hidden!"
-          >
-            {services.map((service) => (
-              <SwiperSlide key={service.slug} className="h-auto!">
-                <ServiceCard service={service} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          {/* Progress bar: fills as the carousel advances through the services. */}
-          <div className="swiper-progress mt-10" aria-hidden="true">
-            <span
-              className="swiper-pagination-progressbar-fill transition-transform duration-700"
-              style={{ transform: `scaleX(${(activeIndex + 1) / services.length})` }}
-            />
-          </div>
-        </Reveal>
+        <ServicesCarousel />
 
         <InlineCta
           tone="dark"

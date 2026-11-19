@@ -3,7 +3,7 @@ import globe from '@/assets/images/about/contact-bg-glob.webp'
 import contactImg from '@/assets/images/contact/contact-img.webp'
 import { paths } from '@/app/router/paths'
 import { SectionHeading } from '@/components/marketing'
-import { contact } from '@/config/site'
+import { useContact } from '@/features/site-settings'
 import { ContactForm } from './ContactForm'
 
 /** Fragment of `paths.eligibility`, so the header's "Free Eligibility Check" lands on the form. */
@@ -16,11 +16,6 @@ interface QuickContact {
   value: string
   href: string
 }
-
-const quickContacts: QuickContact[] = [
-  { icon: Phone, label: 'Call Us on', value: contact.phone, href: contact.phoneHref },
-  { icon: Mail, label: contact.email, value: 'Send a mail', href: contact.emailHref },
-]
 
 function QuickContactLink({ icon: Icon, label, value, href }: QuickContact) {
   return (
@@ -38,6 +33,12 @@ function QuickContactLink({ icon: Icon, label, value, href }: QuickContact) {
 
 /** "Start Your Visa Application" intro with photo + quick contacts, beside the enquiry form. */
 export function ContactDetailsSection() {
+  const contact = useContact()
+  const quickContacts: QuickContact[] = [
+    { icon: Phone, label: 'Call Us on', value: contact.phone, href: contact.phoneHref },
+    { icon: Mail, label: contact.email, value: 'Send a mail', href: contact.emailHref },
+  ]
+
   return (
     <section aria-label="Contact us" className="relative overflow-hidden bg-surface section-y">
       <img

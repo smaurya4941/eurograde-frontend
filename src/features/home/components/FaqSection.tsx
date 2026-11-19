@@ -10,17 +10,17 @@ import {
   Skeleton,
   useAccordion,
 } from '@/components/marketing'
-import { contact } from '@/config/site'
+import { useContact } from '@/features/site-settings'
 import { useFaqs } from '@/features/faqs'
 import { cn } from '@/lib/cn'
 import { studentAvatars } from '../data/people'
 
-const quickContacts: { icon: LucideIcon; label: string; value: string; href: string }[] = [
-  { icon: Phone, label: 'Call Us', value: contact.phone, href: contact.phoneHref },
-  { icon: Mail, label: 'Email Us', value: contact.email, href: contact.emailHref },
-]
-
 export function FaqSection() {
+  const contact = useContact()
+  const quickContacts: { icon: LucideIcon; label: string; value: string; href: string }[] = [
+    { icon: Phone, label: 'Call Us', value: contact.phone, href: contact.phoneHref },
+    { icon: Mail, label: 'Email Us', value: contact.email, href: contact.emailHref },
+  ]
   const { openIndex, toggle } = useAccordion(0)
   const { data: faqs, isPending, isError, refetch } = useFaqs('students')
 

@@ -11,15 +11,13 @@ import {
   Reveal,
   SectionHeading,
 } from '@/components/marketing'
+import { useStat, useStats } from '@/features/site-settings'
 import { studentAvatars } from '../data/people'
 
-const stats = [
-  { value: 80, suffix: '+', label: 'Expert Counselors' },
-  { value: 300, suffix: '+', label: 'Students Abroad' },
-  { value: 50, suffix: '+', label: 'Global Universities' },
-]
-
 export function OfferSection() {
+  const stats = useStats().slice(0, 3)
+  const students = useStat('students')
+
   return (
     <section aria-label="What we offer" className="relative overflow-hidden bg-surface section-y">
       <img
@@ -44,16 +42,12 @@ export function OfferSection() {
 
           <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-line pt-10">
             {stats.map((stat, i) => (
-              <Reveal
-                key={stat.label}
-                delay={i * 120}
-                className="flex flex-col-reverse justify-end"
-              >
+              <Reveal key={stat.key} delay={i * 120} className="flex flex-col-reverse justify-end">
                 <dt className="mt-3 text-sm font-medium text-ink sm:text-base">{stat.label}</dt>
                 <dd>
                   <Counter
                     value={stat.value}
-                    suffix={stat.suffix}
+                    suffix={stat.suffix ?? ''}
                     className="text-[32px] leading-none font-bold text-ink sm:text-[40px] xl:text-[46px]"
                   />
                 </dd>
@@ -81,14 +75,12 @@ export function OfferSection() {
           <Reveal variant="zoom-in" className="h-full">
             <div className="flex h-full flex-col justify-center rounded-2xl bg-brand-600 p-6 text-white xl:p-8">
               <Counter
-                value={300}
-                suffix="+"
+                value={students?.value ?? 0}
+                suffix={students?.suffix ?? ''}
                 className="text-[40px] leading-none font-bold xl:text-[46px]"
                 suffixClassName="text-white"
               />
-              <h3 className="mt-3 text-base font-bold text-white xl:text-lg">
-                Students Studying Abroad
-              </h3>
+              <h3 className="mt-3 text-base font-bold text-white xl:text-lg">{students?.label}</h3>
               <p className="mt-4 text-white">
                 Now thriving at top public universities across Germany and Italy.
               </p>

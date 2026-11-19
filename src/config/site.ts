@@ -11,7 +11,11 @@ export interface NavItem {
   children?: NavItem[]
 }
 
-/** Office details, as published on eurogrades.com. */
+/**
+ * Office details, as published on eurogrades.com.
+ * Fallback only: components read the live values from `GET /site-settings` via
+ * `useContact()` (features/site-settings); these are shown until that loads.
+ */
 export const contact = {
   phone: '+44 20 4154 2541',
   phoneHref: 'tel:+442041542541',
@@ -23,7 +27,22 @@ export const contact = {
 
 export type SocialNetwork = 'facebook' | 'instagram' | 'x' | 'youtube'
 
-export const socials: { network: SocialNetwork; label: string; href: string }[] = [
+/** Accessible names for each network's icon link. */
+export const socialLabels: Record<SocialNetwork, string> = {
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  x: 'X (Twitter)',
+  youtube: 'YouTube',
+}
+
+export interface SocialLink {
+  network: SocialNetwork
+  label: string
+  href: string
+}
+
+/** Fallback social profiles (live values: `useSocials()` from features/site-settings). */
+export const socials: SocialLink[] = [
   { network: 'facebook', label: 'Facebook', href: 'https://facebook.com' },
   { network: 'instagram', label: 'Instagram', href: 'https://instagram.com' },
   { network: 'x', label: 'X (Twitter)', href: 'https://x.com' },
@@ -38,8 +57,9 @@ export const mainNav: NavItem[] = [
     label: 'Countries',
     href: paths.countries,
     children: [
-      { label: 'Study in Germany', href: paths.countries },
-      { label: 'Study in Italy', href: paths.countries },
+      { label: 'All Countries', href: paths.countries },
+      { label: 'Study in Germany', href: `${paths.countries}/germany` },
+      { label: 'Study in Italy', href: `${paths.countries}/italy` },
     ],
   },
   {

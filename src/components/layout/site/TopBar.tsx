@@ -1,9 +1,12 @@
 import { Clock, Mail, Phone } from 'lucide-react'
 import { SocialIcon } from '@/components/icons/SocialIcon'
-import { contact, socials } from '@/config/site'
+import { useContact, useSocials } from '@/features/site-settings'
 
 /** Slim navy contact strip above the main navigation (hidden on small screens). */
 export function TopBar() {
+  const contact = useContact()
+  const socials = useSocials()
+
   return (
     <div className="hidden bg-ink text-white md:block">
       <div className="container-site flex h-[45px] items-center justify-between text-[15px]">

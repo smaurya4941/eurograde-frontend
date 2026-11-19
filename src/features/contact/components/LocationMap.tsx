@@ -1,20 +1,13 @@
-import { contact } from '@/config/site'
+import { useContact } from '@/features/site-settings'
 
-// Keyless Google Maps embed; centred on the office address from the site config.
-const mapSrc = `https://maps.google.com/maps?${new URLSearchParams({
-  q: contact.address,
-  t: 'm',
-  z: '14',
-  output: 'embed',
-  iwloc: 'near',
-})}`
-
-/** Full-width office map shown under the contact section. */
+/** Full-width office map shown under the contact section (keyless Google Maps embed). */
 export function LocationMap() {
+  const contact = useContact()
+
   return (
     <section aria-label="Office location" className="bg-surface">
       <iframe
-        src={mapSrc}
+        src={contact.mapEmbedUrl}
         title={`Map showing our office at ${contact.address}`}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

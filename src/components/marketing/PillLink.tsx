@@ -17,24 +17,40 @@ interface PillLinkProps {
   className?: string
 }
 
-/** Rounded call-to-action link with the signature rotating arrow. */
+/**
+ * Rounded call-to-action link with the signature rotating arrow.
+ * `to` may be a route path, an in-page anchor such as "#student-reviews", or a tel:/mailto: link.
+ */
 export function PillLink({ to, children, variant = 'primary', className }: PillLinkProps) {
-  return (
-    <Link
-      to={to}
-      className={cn(
-        'group inline-flex items-center gap-2.5 rounded-full px-6 py-[15px] text-[15px] leading-none font-bold',
-        'transition-colors duration-300 xl:text-base',
-        variants[variant],
-        className,
-      )}
-    >
+  const classes = cn(
+    'group inline-flex items-center gap-2.5 rounded-full px-6 py-[15px] text-[15px] leading-none font-bold',
+    'transition-colors duration-300 xl:text-base',
+    variants[variant],
+    className,
+  )
+  const content = (
+    <>
       {children}
       <ArrowRight
         aria-hidden="true"
         className="size-[18px] -rotate-45 transition-transform duration-400 group-hover:rotate-0"
         strokeWidth={2}
       />
+    </>
+  )
+
+  // In-page anchors and tel:/mailto:/external links are plain anchors, not router links.
+  if (/^(#|tel:|mailto:|https?:)/.test(to)) {
+    return (
+      <a href={to} className={classes}>
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <Link to={to} className={classes}>
+      {content}
     </Link>
   )
 }

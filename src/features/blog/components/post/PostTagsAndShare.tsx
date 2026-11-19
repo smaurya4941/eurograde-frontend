@@ -2,7 +2,8 @@ import { Check, Copy } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { SocialIcon } from '@/components/icons/SocialIcon'
-import { socials, type SocialNetwork } from '@/config/site'
+import type { SocialLink, SocialNetwork } from '@/config/site'
+import { useSocials } from '@/features/site-settings'
 import type { PostTag } from '../../types'
 import { blogTagHref } from '../../utils'
 
@@ -13,7 +14,7 @@ interface ShareTarget {
 }
 
 /** Facebook and X get real share links; Instagram/YouTube have no web share, so they link to our profiles. */
-function shareTargets(url: string, title: string): ShareTarget[] {
+function shareTargets(url: string, title: string, socials: SocialLink[]): ShareTarget[] {
   const profile = (network: SocialNetwork) =>
     socials.find((s) => s.network === network)?.href ?? '#'
   const u = encodeURIComponent(url)
@@ -72,6 +73,7 @@ function CopyLinkButton({ url }: { url: string }) {
 
 /** Tag pills and share links between the article body and the author box. */
 export function PostTagsAndShare({ tags, title }: { tags: PostTag[]; title: string }) {
+  const socials = useSocials()
   const url =
     typeof window === 'undefined' ? '' : `${window.location.origin}${window.location.pathname}`
 
@@ -99,7 +101,7 @@ export function PostTagsAndShare({ tags, title }: { tags: PostTag[]; title: stri
       <div className="flex items-center gap-4">
         <span className="sr-only">Share this article</span>
         <ul className="flex items-center gap-[22px]">
-          {shareTargets(url, title).map((target) => (
+          {shareTargets(url, title, socials).map((target) => (
             <li key={target.network} className="flex">
               <a
                 href={target.href}

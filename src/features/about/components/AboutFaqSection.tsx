@@ -12,15 +12,9 @@ import {
   Skeleton,
   useAccordion,
 } from '@/components/marketing'
-import { contact } from '@/config/site'
 import { useFaqs } from '@/features/faqs'
+import { useContact } from '@/features/site-settings'
 import { cn } from '@/lib/cn'
-
-const contactItems: { icon: LucideIcon; value: string; label: string; href?: string }[] = [
-  { icon: Phone, value: contact.phone, label: 'Call Us on', href: contact.phoneHref },
-  { icon: Mail, value: contact.email, label: 'Send a mail', href: contact.emailHref },
-  { icon: MapPin, value: contact.address, label: 'Reach out at' },
-]
 
 function FaqList() {
   const { openIndex, toggle } = useAccordion(0)
@@ -81,6 +75,13 @@ function FaqList() {
 }
 
 export function AboutFaqSection() {
+  const contact = useContact()
+  const contactItems: { icon: LucideIcon; value: string; label: string; href?: string }[] = [
+    { icon: Phone, value: contact.phone, label: 'Call Us on', href: contact.phoneHref },
+    { icon: Mail, value: contact.email, label: 'Send a mail', href: contact.emailHref },
+    { icon: MapPin, value: contact.address, label: 'Reach out at' },
+  ]
+
   return (
     <section aria-label="Frequently asked questions" className="bg-surface section-y">
       <div className="container-site">

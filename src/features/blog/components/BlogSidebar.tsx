@@ -3,7 +3,7 @@ import { useId, useState, type FormEvent } from 'react'
 import { Link } from 'react-router'
 import { SocialIcon } from '@/components/icons/SocialIcon'
 import { Skeleton } from '@/components/marketing'
-import { socials } from '@/config/site'
+import { useSocials } from '@/features/site-settings'
 import { cn } from '@/lib/cn'
 import { useLatestPosts, usePostCategories } from '../hooks'
 import { blogCategoryHref, blogPostHref, formatPostDate } from '../utils'
@@ -159,6 +159,8 @@ function RecentPostsWidget() {
 }
 
 function FollowWidget() {
+  const socials = useSocials()
+
   return (
     <section className="border-y border-line-light py-6">
       <WidgetTitle>Follow Us On</WidgetTitle>
