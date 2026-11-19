@@ -1,0 +1,11 @@
+// Public surface of the about feature: one component per page section, in page order.
+export { AboutIntroSection } from './components/AboutIntroSection'
+export { ApproachSection } from './components/ApproachSection'
+export { AboutWhyChooseSection } from './components/AboutWhyChooseSection'
+export { StatsStripSection } from './components/StatsStripSection'
+export { VideoSection } from './components/VideoSection'
+export { ContactSection } from './components/ContactSection'
+export { TeamCarouselSection } from './components/TeamCarouselSection'
+export { AboutFaqSection } from './components/AboutFaqSection'
+export { GlobalCtaSection } from './components/GlobalCtaSection'
+export { InsightsSection } from './components/InsightsSection'

@@ -1,0 +1,203 @@
+/*
+ * Scroll-triggered animations.
+ * Components set `data-inview="true"` (via useInView) when they enter the viewport;
+ * everything here is pure CSS so animations run off the main thread.
+ */
+
+/* ---------- Entrance reveals (Reveal component) ---------- */
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 1s var(--ease-out-quad),
+    transform 1s var(--ease-out-quad);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal='fade-up'] {
+  transform: translate3d(0, 50px, 0);
+}
+[data-reveal='fade-down'] {
+  transform: translate3d(0, -50px, 0);
+}
+[data-reveal='fade-right'] {
+  transform: translate3d(-60px, 0, 0);
+}
+[data-reveal='fade-left'] {
+  transform: translate3d(60px, 0, 0);
+}
+[data-reveal='zoom-in'] {
+  transform: scale3d(0.6, 0.6, 0.6);
+}
+[data-reveal][data-inview='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Split-text headings (AnimatedHeading component) ---------- */
+.split-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.split-char {
+  display: inline-block;
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-delay: calc(var(--split-base, 100ms) + var(--i) * var(--split-stagger, 30ms));
+}
+[data-split='slide'] {
+  --split-stagger: 30ms;
+  --split-base: 100ms;
+}
+[data-split='slide'] .split-char {
+  transform: translate3d(20px, 0, 0);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+[data-split='back'] {
+  --split-stagger: 20ms;
+  --split-base: 0ms;
+}
+[data-split='back'] .split-char {
+  transform: translate3d(50px, 0, 0);
+  transition-duration: 1s;
+  transition-timing-function: var(--ease-back);
+}
+[data-split][data-inview='true'] .split-char {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Image wipe reveal (ImageReveal component) ---------- */
+[data-image-reveal] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+[data-image-reveal][data-inview='true'] {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ---------- Image "shine" sweep on hover ---------- */
+.img-shine {
+  position: relative;
+  overflow: hidden;
+}
+.img-shine::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 0;
+  background-color: rgb(255 255 255 / 0.5);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+.img-shine:hover::after,
+.group:hover .img-shine::after {
+  height: 250%;
+  background-color: transparent;
+  transition: all 600ms linear;
+}
+
+/* ---------- Looping decorative motion ---------- */
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+.animate-swing {
+  transform-origin: top center;
+  animation: swing 5s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes header-slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-header-in {
+  animation: header-slide-down 0.5s var(--ease-out-quad);
+}
+
+/* ---------- Swiper progress bar (services slider) ---------- */
+.swiper-progress {
+  position: relative;
+  height: 8px;
+  border-radius: 50px;
+  background: rgb(37 99 235 / 0.2);
+  overflow: hidden;
+}
+.swiper-progress .swiper-pagination-progressbar-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-brand-600);
+  border-radius: 50px;
+  transform-origin: left top;
+}
+
+/* ---------- Swiper dot pagination (team carousel) ---------- */
+/* `.swiper` resets padding and loads with the route chunk, so out-rank it. */
+.swiper.team-swiper {
+  --swiper-pagination-bottom: 0px;
+  padding-bottom: 56px;
+}
+.team-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px !important;
+  border-radius: 8px;
+  background: rgb(255 255 255 / 0.3);
+  opacity: 1;
+  transition:
+    width 0.35s ease,
+    background-color 0.35s ease;
+}
+.team-swiper .swiper-pagination-bullet-active {
+  width: 50px;
+  background: var(--color-brand-600);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .split-char,
+  [data-image-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+  .animate-swing,
+  .animate-float,
+  .animate-header-in {
+    animation: none !important;
+  }
+}
