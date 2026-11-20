@@ -1,0 +1,84 @@
+# Checks and builds every push to main, then publishes the built site (dist/) to the `deploy`
+# branch. Plesk's Git extension pulls that branch into the document root, so the server needs no
+# Node.js. Setup: DEPLOYMENT.md.
+#
+# Repository variables (Settings → Secrets and variables → Actions → Variables):
+#   VITE_API_URL    API origin, e.g. https://eurogradeapi.ureligible.com (required)
+#   VITE_APP_NAME   optional, defaults to EuroGrades
+#   ALLOW_INDEXING  set to "true" only on the final domain; otherwise search engines are blocked
+name: Build and publish deploy branch
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Check, build, publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Require the API URL
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+        run: |
+          if [ -z "$VITE_API_URL" ]; then
+            echo "::error::Set the VITE_API_URL repository variable (e.g. https://eurogradeapi.ureligible.com)."
+            exit 1
+          fi
+
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
+
+      - name: Build
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+          VITE_APP_NAME: ${{ vars.VITE_APP_NAME || 'EuroGrades' }}
+        run: npm run build
+
+      - name: Keep staging out of search engines
+        if: ${{ vars.ALLOW_INDEXING != 'true' }}
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
+          printf '\n<IfModule mod_headers.c>\n  Header always set X-Robots-Tag "noindex, nofollow"\n</IfModule>\n' >> dist/.htaccess
+
+      - name: Commit to deploy branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          test -f dist/index.html && test -f dist/.htaccess
+          REPO="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          TARGET="$RUNNER_TEMP/deploy"
+          # Build on top of the existing branch so Plesk always gets a fast-forward pull.
+          if git ls-remote --exit-code --heads "$REPO" deploy > /dev/null; then
+            git clone --quiet --depth 1 --branch deploy "$REPO" "$TARGET"
+          else
+            git init --quiet -b deploy "$TARGET"
+            git -C "$TARGET" remote add origin "$REPO"
+          fi
+          rsync -a --delete --exclude='.git' dist/ "$TARGET"/
+          cd "$TARGET"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed; deploy branch is up to date."
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit --quiet -m "Deploy ${GITHUB_SHA::7}"
+          git push --quiet origin HEAD:deploy
