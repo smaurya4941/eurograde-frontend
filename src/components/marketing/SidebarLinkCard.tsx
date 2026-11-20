@@ -18,10 +18,13 @@ const linkClass =
 export function SidebarLinkCard({
   title,
   links,
+  highlightCurrent = true,
   className,
 }: {
   title: string
   links: SidebarLink[]
+  /** Show the current entry in brand blue (it is always marked with aria-current). */
+  highlightCurrent?: boolean
   className?: string
 }) {
   const titleId = useId()
@@ -46,7 +49,10 @@ export function SidebarLinkCard({
               />
             </>
           )
-          const className = cn(linkClass, link.current ? 'text-brand-500' : 'text-white')
+          const className = cn(
+            linkClass,
+            link.current && highlightCurrent ? 'text-brand-500' : 'text-white',
+          )
 
           return (
             <li key={link.href}>

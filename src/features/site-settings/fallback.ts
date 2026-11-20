@@ -9,9 +9,12 @@ export const fallbackSiteSettings: SiteSettings = {
   contact: {
     phone: contact.phone,
     phone_href: contact.phoneHref,
+    phone_alt: contact.phoneAlt,
+    phone_alt_href: null,
     email: contact.email,
     address: contact.address,
     hours: contact.hours,
+    hours_weekend: contact.hoursWeekend,
     map_embed_url: null,
   },
   socials: socials.map((s) => ({ network: s.network, url: s.href })),

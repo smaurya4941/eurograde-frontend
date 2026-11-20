@@ -1,4 +1,4 @@
-import travellers from '@/assets/images/about/whychoose-img.webp'
+import travellers from '@/assets/images/about/graduate-student.webp'
 import { ImageReveal, Reveal, SectionHeading } from '@/components/marketing'
 import { reasons } from '../data/content'
 
@@ -11,7 +11,7 @@ export function AboutWhyChooseSection() {
       {/* Full-bleed photo on the left edge */}
       <ImageReveal
         src={travellers}
-        alt="Two students checking their phones in an airport lounge"
+        alt="Smiling graduate in her cap and gown"
         width={750}
         height={890}
         wrapperClassName="relative h-72 sm:h-96 lg:h-auto"

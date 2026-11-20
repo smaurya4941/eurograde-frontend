@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react'
 import serviceBg from '@/assets/images/backgrounds/service-bg.webp'
-import graduate from '@/assets/images/home/whychoose-img.webp'
+import graduate from '@/assets/images/home/graduates-selfie.webp'
 import { AccordionItem, Reveal, SectionHeading, useAccordion } from '@/components/marketing'
 import { cn } from '@/lib/cn'
 import { whyChoose } from '../data/content'
@@ -30,7 +30,7 @@ export function WhyChooseSection() {
           <Reveal variant="fade-up">
             <img
               src={graduate}
-              alt="Graduate holding a passport and university acceptance letter"
+              alt="EuroGrades graduates taking a selfie in their caps and gowns"
               width={659}
               height={613}
               loading="lazy"

@@ -42,14 +42,20 @@ export function useContact(): ContactInfo {
     const phone = contact.phone || fb.phone || ''
     const email = contact.email || fb.email || ''
     const address = contact.address || fb.address || ''
+    const phoneAlt = contact.phone_alt || fb.phone_alt || ''
 
     return {
       phone,
       phoneHref: contact.phone_href || `tel:${phone.replace(/[^\d+]/g, '')}`,
+      phoneAlt,
+      phoneAltHref: phoneAlt
+        ? contact.phone_alt_href || `tel:${phoneAlt.replace(/[^\d+]/g, '')}`
+        : '',
       email,
       emailHref: `mailto:${email}`,
       address,
       hours: contact.hours || fb.hours || '',
+      hoursWeekend: contact.hours_weekend || fb.hours_weekend || '',
       mapEmbedUrl: contact.map_embed_url || mapsEmbedUrl(address),
     }
   }, [contact])

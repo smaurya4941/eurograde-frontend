@@ -1,6 +1,6 @@
 import { paths } from '@/app/router/paths'
-import mainImg from '@/assets/images/about/about-img.webp'
-import detailImg from '@/assets/images/about/about-img2.webp'
+import mainImg from '@/assets/images/about/graduates-campus.webp'
+import detailImg from '@/assets/images/about/graduation-caps.webp'
 import visaStamp from '@/assets/images/about/visa-temp-img.svg'
 import { ImageReveal, PillLink, Reveal, SectionHeading } from '@/components/marketing'
 
@@ -15,7 +15,7 @@ export function AboutIntroSection() {
         <div className="relative pb-20 sm:pb-0">
           <ImageReveal
             src={mainImg}
-            alt="Smiling couple holding passports and boarding passes"
+            alt="Graduates celebrating outside their university"
             width={766}
             height={705}
             wrapperClassName="overflow-hidden rounded-2xl"
@@ -69,7 +69,7 @@ export function AboutIntroSection() {
             <div className="img-shine max-w-[220px] overflow-hidden rounded-xl sm:max-w-none">
               <img
                 src={detailImg}
-                alt="Traveller holding a passport and boarding pass"
+                alt="Graduation caps thrown in the air"
                 width={221}
                 height={176}
                 loading="lazy"

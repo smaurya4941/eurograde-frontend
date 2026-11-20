@@ -26,6 +26,8 @@ export interface CountryDetail {
   iso_code: string
   flag_url: string | null
   cover_image_url: string | null
+  /** Photo behind the page banner; null uses the default banner. */
+  banner_image_url: string | null
   excerpt: string | null
   /** Paragraphs separated by a blank line. */
   overview: string | null

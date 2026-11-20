@@ -5,6 +5,7 @@ import { Logo } from '@/components/brand/Logo'
 import { SocialIcon } from '@/components/icons/SocialIcon'
 import { env } from '@/config/env'
 import { footerColumns, legalLinks } from '@/config/site'
+import { serviceHref, useServices } from '@/features/services'
 import { useContact, useSocials } from '@/features/site-settings'
 import { NewsletterForm } from './NewsletterForm'
 
@@ -13,11 +14,37 @@ const CURRENT_YEAR = new Date().getFullYear()
 export function SiteFooter() {
   const contact = useContact()
   const socials = useSocials()
-  const contactItems: { icon: LucideIcon; label: string; value: string; href?: string }[] = [
-    { icon: Phone, label: 'Call Us on', value: contact.phone, href: contact.phoneHref },
-    { icon: Mail, label: 'Reach out', value: contact.email, href: contact.emailHref },
-    { icon: MapPin, label: 'Location', value: contact.address },
-    { icon: Clock, label: 'Working Hours', value: contact.hours },
+  const { data: services } = useServices()
+  // The services column lists the live services; the static links are only the fallback.
+  const columns = footerColumns.map((column) =>
+    column.title === 'Our Services' && services && services.length > 0
+      ? { ...column, links: services.map((s) => ({ label: s.title, href: serviceHref(s.slug) })) }
+      : column,
+  )
+  // Each item can show several lines (both office numbers, weekday + Saturday hours).
+  const contactItems: {
+    icon: LucideIcon
+    label: string
+    lines: { text: string; href?: string }[]
+  }[] = [
+    {
+      icon: Phone,
+      label: 'Call Us on',
+      lines: [
+        { text: contact.phone, href: contact.phoneHref },
+        ...(contact.phoneAlt ? [{ text: contact.phoneAlt, href: contact.phoneAltHref }] : []),
+      ],
+    },
+    { icon: Mail, label: 'Reach out', lines: [{ text: contact.email, href: contact.emailHref }] },
+    { icon: MapPin, label: 'Location', lines: [{ text: contact.address }] },
+    {
+      icon: Clock,
+      label: 'Working Hours',
+      lines: [
+        { text: contact.hours },
+        ...(contact.hoursWeekend ? [{ text: contact.hoursWeekend }] : []),
+      ],
+    },
   ]
 
   return (
@@ -45,7 +72,7 @@ export function SiteFooter() {
 
         {/* Link columns */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16">
-          {footerColumns.map((column) => (
+          {columns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
               <h2 className="text-lg font-bold text-white uppercase">{column.title}</h2>
               <ul className="mt-6 space-y-3">
@@ -70,19 +97,27 @@ export function SiteFooter() {
           <div>
             <h2 className="text-lg font-bold text-white uppercase">Contact Informations</h2>
             <ul className="mt-6 space-y-5">
-              {contactItems.map(({ icon: Icon, label, value, href }) => (
+              {contactItems.map(({ icon: Icon, label, lines }) => (
                 <li key={label} className="flex items-start gap-4">
                   <span className="flex size-[42px] shrink-0 items-center justify-center rounded-full bg-brand-600">
                     <Icon aria-hidden="true" className="size-[18px]" />
                   </span>
                   <span className="text-[15px] leading-snug">
                     <span className="block text-white/90">{label}</span>
-                    {href ? (
-                      <a href={href} className="font-bold transition-colors hover:text-brand-500">
-                        {value}
-                      </a>
-                    ) : (
-                      <span className="font-bold">{value}</span>
+                    {lines.map(({ text, href }) =>
+                      href ? (
+                        <a
+                          key={text}
+                          href={href}
+                          className="block font-bold transition-colors hover:text-brand-500"
+                        >
+                          {text}
+                        </a>
+                      ) : (
+                        <span key={text} className="block font-bold">
+                          {text}
+                        </span>
+                      ),
                     )}
                   </span>
                 </li>

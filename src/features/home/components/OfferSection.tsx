@@ -1,6 +1,6 @@
 import { paths } from '@/app/router/paths'
 import capGraphic from '@/assets/images/backgrounds/how-work-graphics.png'
-import studentImg from '@/assets/images/home/how-work-img.webp'
+import studentImg from '@/assets/images/home/student-with-books.webp'
 import globeImg from '@/assets/images/home/how-work-img2.webp'
 import {
   AnimatedHeading,

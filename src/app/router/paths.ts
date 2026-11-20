@@ -8,6 +8,8 @@ export const paths = {
   // Marketing site (pages are being built one at a time; until then they fall through to 404).
   about: '/about',
   services: '/services',
+  /** Route pattern; build links with `serviceHref(slug)`. */
+  service: '/services/:slug',
   countries: '/countries',
   /** Route pattern; build links with `countryHref(slug)`. */
   country: '/countries/:slug',

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router'
-import bannerImg from '@/assets/images/about/banner-img.webp'
+import bannerImg from '@/assets/images/banners/blog.webp'
 import { paths } from '@/app/router/paths'
 import { ContentError, PageBanner } from '@/components/marketing'
 import { blogCategoryHref, PostArticle, PostArticleSkeleton, usePost } from '@/features/blog'

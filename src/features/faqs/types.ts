@@ -7,6 +7,7 @@ export type FaqCategory =
   | 'ielts'
   | 'german-language'
   | 'italian-language'
+  | 'attestation'
 
 /** Mirrors App\Http\Resources\V1\FaqResource. */
 export interface Faq {

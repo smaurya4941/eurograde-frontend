@@ -12,6 +12,8 @@ interface SectionHeadingProps {
   tone?: 'light' | 'dark'
   className?: string
   titleClassName?: string
+  /** Extra classes for the badge pill (e.g. the larger badge on service pages). */
+  badgeClassName?: string
 }
 
 /** Badge + animated title + optional intro paragraph, used at the top of most sections. */
@@ -23,13 +25,14 @@ export function SectionHeading({
   tone = 'light',
   className,
   titleClassName,
+  badgeClassName,
 }: SectionHeadingProps) {
   const centered = align === 'center'
 
   return (
     <div className={cn(centered && 'mx-auto text-center', className)}>
       <Reveal>
-        <SectionBadge>{badge}</SectionBadge>
+        <SectionBadge className={badgeClassName}>{badge}</SectionBadge>
       </Reveal>
       <AnimatedHeading
         parts={title}

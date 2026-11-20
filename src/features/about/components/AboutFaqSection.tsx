@@ -1,6 +1,6 @@
 import { ChevronDown, Mail, MapPin, Phone, type LucideIcon } from 'lucide-react'
 import { paths } from '@/app/router/paths'
-import faqImg from '@/assets/images/about/faq-img.webp'
+import faqImg from '@/assets/images/about/student-portrait.webp'
 import profile1 from '@/assets/images/avatars/profile-img1.png'
 import {
   AccordionItem,
@@ -101,7 +101,7 @@ export function AboutFaqSection() {
           <div className="relative min-h-[520px]">
             <ImageReveal
               src={faqImg}
-              alt="Consultant smiling during a client meeting"
+              alt="Student holding her books on campus"
               width={621}
               height={832}
               wrapperClassName="absolute inset-0 overflow-hidden rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none"

@@ -19,10 +19,12 @@ export interface NavItem {
 export const contact = {
   phone: '+44 20 4154 2541',
   phoneHref: 'tel:+442041542541',
+  phoneAlt: '+44 20 4154 2542',
   email: 'contact@eurogrades.com',
   emailHref: 'mailto:contact@eurogrades.com',
   address: '128A, Sewak Park, Uttam Nagar, New Delhi 110059, India',
   hours: 'Mon – Fri: 9:00 AM – 6:00 PM',
+  hoursWeekend: 'Saturday: 9:00 AM – 4:00 PM',
 } as const
 
 export type SocialNetwork = 'facebook' | 'instagram' | 'x' | 'youtube'
@@ -96,25 +98,26 @@ export const footerColumns: { title: string; links: NavItem[] }[] = [
     ],
   },
   {
+    // Replaced at runtime by the active services from the API (see SiteFooter).
     title: 'Our Services',
     links: [
-      { label: 'Study in Germany', href: paths.services },
-      { label: 'Study in Italy', href: paths.services },
-      { label: 'IELTS Preparation', href: paths.services },
-      { label: 'German Language Course', href: paths.services },
-      { label: 'Italian Language Course', href: paths.services },
-      { label: 'Attestation Services', href: paths.services },
+      { label: 'Study in Germany', href: `${paths.services}/study-in-germany` },
+      { label: 'Study in Italy', href: `${paths.services}/study-in-italy` },
+      { label: 'IELTS Preparation', href: `${paths.services}/ielts-preparation` },
+      { label: 'German Language Course', href: `${paths.services}/german-language-course` },
+      { label: 'Italian Language Course', href: `${paths.services}/italian-language-course` },
+      { label: 'Attestation Services', href: `${paths.services}/attestation-services` },
     ],
   },
   {
     title: 'Popular Study Cities',
     links: [
-      { label: 'Munich, Germany', href: paths.countries },
-      { label: 'Berlin, Germany', href: paths.countries },
-      { label: 'Frankfurt, Germany', href: paths.countries },
-      { label: 'Rome, Italy', href: paths.countries },
-      { label: 'Milan, Italy', href: paths.countries },
-      { label: 'Bologna, Italy', href: paths.countries },
+      { label: 'Munich, Germany', href: `${paths.countries}/germany` },
+      { label: 'Berlin, Germany', href: `${paths.countries}/germany` },
+      { label: 'Frankfurt, Germany', href: `${paths.countries}/germany` },
+      { label: 'Rome, Italy', href: `${paths.countries}/italy` },
+      { label: 'Milan, Italy', href: `${paths.countries}/italy` },
+      { label: 'Bologna, Italy', href: `${paths.countries}/italy` },
     ],
   },
 ]

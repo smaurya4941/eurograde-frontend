@@ -12,7 +12,7 @@ import {
   SectionHeading,
   Skeleton,
 } from '@/components/marketing'
-import { useServices, type Service } from '@/features/services'
+import { serviceHref, useServices, type Service } from '@/features/services'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { ctaAvatars } from '../data/people'
 
@@ -31,7 +31,7 @@ function ServiceCard({ service }: { service: Service }) {
         <h3 className="text-lg font-bold xl:text-[21px]">{service.title}</h3>
       </div>
       <p className="mt-5 line-clamp-2">{service.excerpt}</p>
-      <ArrowLink to={`${paths.services}/${service.slug}`} className="mt-5 self-start">
+      <ArrowLink to={serviceHref(service.slug)} className="mt-5 self-start">
         Read More<span className="sr-only">: {service.title}</span>
       </ArrowLink>
       <div className="img-shine mt-6 overflow-hidden rounded-xl">

@@ -24,7 +24,7 @@ export default function CountryPage() {
     <>
       <PageBanner
         title={country?.name ?? 'Countries'}
-        image={bannerImg}
+        image={country?.banner_image_url ?? bannerImg}
         breadcrumbs={country ? [countriesCrumb, { label: country.name }] : [{ label: 'Countries' }]}
       />
       {isPending ? (

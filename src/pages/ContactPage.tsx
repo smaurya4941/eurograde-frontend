@@ -1,4 +1,4 @@
-import bannerImg from '@/assets/images/about/banner-img.webp'
+import bannerImg from '@/assets/images/banners/about.webp'
 import { PageBanner } from '@/components/marketing'
 import { ContactDetailsSection, LocationMap } from '@/features/contact'
 import { usePageTitle } from '@/hooks/usePageTitle'
