@@ -1,0 +1,1 @@
+var e=`/assets/top-right-globe2-EbW91cfk.png`;export{e as t};

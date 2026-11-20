@@ -1,0 +1,1 @@
+var e=`/assets/banner-img-BVfYUNYU.webp`;export{e as t};

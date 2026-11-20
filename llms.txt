@@ -1,0 +1,27 @@
+# EuroGrades
+
+> EuroGrades is a study-abroad consultancy (New Delhi office) that helps students get admission to affordable, high-quality public universities in Germany and Italy, with IELTS preparation, German and Italian language courses and document attestation services.
+
+## Study destinations
+
+- [Countries](/countries): Germany and Italy at a glance (tuition, living costs, visas)
+- [Study in Germany](/countries/germany): why Germany, top student cities and FAQs
+- [Study in Italy](/countries/italy): why Italy, top student cities and FAQs
+
+## Services
+
+- [All services](/services)
+- [Study in Germany](/services/study-in-germany): university selection, applications and student visa guidance
+- [Study in Italy](/services/study-in-italy): admissions, scholarships and visa guidance
+- [IELTS Preparation](/services/ielts-preparation): coaching for Listening, Reading, Writing and Speaking
+- [German Language Course](/services/german-language-course): A1 to B2, TestDaF and DSH preparation
+- [Italian Language Course](/services/italian-language-course): A1 to C1, CILS and CELI preparation
+- [Attestation Services](/services/attestation-services): MEA apostille, attestation, embassy legalisation and translation
+
+## Company
+
+- [About EuroGrades](/about)
+- [Student testimonials](/testimonials)
+- [Frequently asked questions](/faqs)
+- [Blog](/blog)
+- [Contact](/contact): +44 20 4154 2541, contact@eurogrades.com

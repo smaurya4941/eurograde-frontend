@@ -1,0 +1,1 @@
+var e=`/assets/blog-B8-_to82.webp`;export{e as t};
