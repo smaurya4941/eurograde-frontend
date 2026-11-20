@@ -8,7 +8,7 @@
     'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system,
     'Segoe UI', sans-serif;
 
-  /* Brand palette (accent blue) — change these to re-theme the whole app. */
+  /* Brand palette (Vistara accent blue) — change these to re-theme the whole app. */
   --color-brand-50: #eff6ff;
   --color-brand-100: #dbeafe;
   --color-brand-200: #bfdbfe;
@@ -16,17 +16,21 @@
   --color-brand-600: #2563eb;
   --color-brand-700: #1d4ed8;
   --color-brand-800: #1e40af;
+  /* Accent text placed directly on dark (ink) backgrounds; same as 600 in this palette. */
+  --color-brand-on-dark: #2563eb;
+  /* Gradient over team photos. */
+  --color-card-overlay: #2563eb;
 
   /* Semantic site colours. */
   --color-ink: #0f172a; /* headings, dark sections, footer */
   --color-ink-soft: #1e2539; /* cards on dark backgrounds */
-  --color-body: #64748b; /* paragraph text */
+  --color-body: #5b6b82; /* paragraph text (4.9:1 on surface, 5.4:1 on white) */
   --color-surface: #f1f5f9; /* light section background */
   --color-line: rgb(0 0 0 / 0.12); /* dividers on light */
   --color-line-light: rgb(255 255 255 / 0.15); /* dividers on dark */
 
-  --shadow-glow: 0 16px 32px 0 rgb(37 99 235 / 0.2);
-  --shadow-card: 0 20px 50px -20px rgb(15 23 42 / 0.18);
+  --shadow-glow: 0 16px 32px 0 color-mix(in srgb, var(--color-brand-600) 20%, transparent);
+  --shadow-card: 0 20px 50px -20px color-mix(in srgb, var(--color-ink) 18%, transparent);
 
   --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);

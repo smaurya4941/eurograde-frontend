@@ -1,9 +1,7 @@
 import type { ComponentType } from 'react'
 import { createBrowserRouter } from 'react-router'
-import { RootLayout } from '@/components/layout/RootLayout'
 import { SiteLayout } from '@/components/layout/SiteLayout'
 import { RouteErrorPage } from '@/pages/RouteErrorPage'
-import { GuestRoute, ProtectedRoute } from './guards'
 import { paths } from './paths'
 
 // Pages are lazy-loaded so each route ships as its own chunk.
@@ -28,25 +26,27 @@ export const router = createBrowserRouter([
       { path: paths.countries, lazy: page(() => import('@/pages/CountriesPage')) },
       { path: paths.country, lazy: page(() => import('@/pages/CountryPage')) },
       { path: paths.contact, lazy: page(() => import('@/pages/ContactPage')) },
+      // Unknown URLs get the 404 page inside the normal site header/footer.
+      { path: '*', lazy: page(() => import('@/pages/NotFoundPage')) },
     ],
   },
   {
-    // Application (auth + dashboard).
-    Component: RootLayout,
+    // Application (auth + dashboard). Its layout and guards are lazy too, so the auth forms
+    // (react-hook-form + zod) never load on the public marketing pages.
+    lazy: async () => ({ Component: (await import('@/components/layout/RootLayout')).RootLayout }),
     errorElement: <RouteErrorPage />,
     children: [
       {
-        Component: GuestRoute,
+        lazy: async () => ({ Component: (await import('./guards')).GuestRoute }),
         children: [
           { path: paths.login, lazy: page(() => import('@/pages/auth/LoginPage')) },
           { path: paths.register, lazy: page(() => import('@/pages/auth/RegisterPage')) },
         ],
       },
       {
-        Component: ProtectedRoute,
+        lazy: async () => ({ Component: (await import('./guards')).ProtectedRoute }),
         children: [{ path: paths.dashboard, lazy: page(() => import('@/pages/DashboardPage')) }],
       },
-      { path: '*', lazy: page(() => import('@/pages/NotFoundPage')) },
     ],
   },
 ])

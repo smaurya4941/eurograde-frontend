@@ -1,0 +1,6 @@
+# EuroGrades — study abroad consultancy (Germany & Italy)
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register

@@ -1,5 +1,6 @@
 import { MutationCache, QueryCache, QueryClient } from '@tanstack/react-query'
-import { authKeys } from '@/features/auth'
+// Deep import on purpose: the auth barrel would bundle the login/register forms into every page.
+import { authKeys } from '@/features/auth/keys'
 import { ApiError } from '@/lib/api/errors'
 
 function handleUnauthorized(error: unknown) {

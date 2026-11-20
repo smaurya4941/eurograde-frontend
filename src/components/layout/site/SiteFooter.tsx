@@ -109,7 +109,7 @@ export function SiteFooter() {
                         <a
                           key={text}
                           href={href}
-                          className="block font-bold transition-colors hover:text-brand-500"
+                          className="block leading-6 font-bold transition-colors hover:text-brand-500"
                         >
                           {text}
                         </a>

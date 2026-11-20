@@ -36,6 +36,7 @@ export function SectionHeading({
       </Reveal>
       <AnimatedHeading
         parts={title}
+        highlightClassName={tone === 'dark' ? 'text-brand-on-dark' : undefined}
         className={cn(
           'mt-4 text-display',
           tone === 'dark' ? 'text-white' : 'text-ink',

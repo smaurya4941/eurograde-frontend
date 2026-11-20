@@ -1,4 +1,5 @@
 import { Outlet, ScrollRestoration } from 'react-router'
+import { LazySection } from '@/components/marketing/LazySection'
 import { BackToTop } from './site/BackToTop'
 import { MagicCursor } from './site/MagicCursor'
 import { SiteFooter } from './site/SiteFooter'
@@ -18,7 +19,10 @@ export function SiteLayout() {
       <main id="main" className="flex-1">
         <Outlet />
       </main>
-      <SiteFooter />
+      {/* The footer is far below the first screen on most pages: mount it as the visitor nears it. */}
+      <LazySection placeholderHeight={700} margin={400}>
+        <SiteFooter />
+      </LazySection>
       <BackToTop />
       <MagicCursor />
       <ScrollRestoration />

@@ -22,7 +22,7 @@ export function WhyChooseSection() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_55%_50%,rgb(37_99_235/0.45),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_55%_50%,color-mix(in_srgb,var(--color-brand-600)_45%,transparent),transparent_70%)]"
       />
 
       <div className="relative container-site grid items-center gap-14 lg:grid-cols-2 lg:gap-[60px]">
@@ -80,7 +80,7 @@ export function WhyChooseSection() {
                       <span
                         className={cn(
                           'text-lg font-bold transition-colors xl:text-[21px]',
-                          isOpen ? 'text-brand-600' : 'text-white',
+                          isOpen ? 'text-brand-on-dark' : 'text-white',
                         )}
                       >
                         {i + 1}. {item.title}
@@ -88,7 +88,7 @@ export function WhyChooseSection() {
                       <ChevronDown
                         aria-hidden="true"
                         className={cn(
-                          'size-5 shrink-0 text-brand-600 transition-transform duration-300',
+                          'size-5 shrink-0 text-brand-on-dark transition-transform duration-300',
                           isOpen && 'rotate-180',
                         )}
                       />

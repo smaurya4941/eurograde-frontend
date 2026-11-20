@@ -1,11 +1,9 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { ApiError } from '@/lib/api/errors'
 import { authApi } from './api'
+import { authKeys } from './keys'
 
-export const authKeys = {
-  all: ['auth'] as const,
-  me: () => [...authKeys.all, 'me'] as const,
-}
+export { authKeys }
 
 /** Current user, or `null` when not signed in. */
 export function useCurrentUser() {

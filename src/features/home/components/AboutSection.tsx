@@ -51,6 +51,7 @@ export function AboutSection() {
                 value={counselors?.value ?? 0}
                 suffix={counselors?.suffix ?? ''}
                 className="text-[34px] leading-none font-bold sm:text-[40px]"
+                suffixClassName="text-brand-on-dark"
               />
               <h3 className="mt-3 text-lg font-bold text-white sm:text-[22px]">
                 Expert Study Abroad Counselors

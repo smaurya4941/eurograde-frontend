@@ -17,10 +17,10 @@ function TeamCard({ member }: { member: TeamMember }) {
         loading="lazy"
         className="aspect-[410/500] w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      {/* Blue gradient that deepens on hover */}
+      {/* Accent gradient that deepens on hover */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,var(--color-brand-600)_100%)] transition-opacity duration-500 group-hover:opacity-100 sm:opacity-90"
+        className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,var(--color-card-overlay)_100%)] transition-opacity duration-500 group-hover:opacity-100 sm:opacity-90"
       />
 
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">

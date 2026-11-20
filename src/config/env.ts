@@ -1,20 +1,26 @@
-import { z } from 'zod'
+/*
+ * Validated build-time environment. Deliberately dependency-free: this module runs on every
+ * page load, and pulling in a schema library here would put it on the critical path.
+ */
 
-const schema = z.object({
-  VITE_APP_NAME: z.string().min(1).default('EuroGrades'),
-  VITE_API_URL: z.union([z.literal(''), z.url()]).default(''),
-})
+function readAppName(value: unknown): string {
+  if (value === undefined || value === '') return 'EuroGrades'
+  if (typeof value !== 'string') throw new Error('VITE_APP_NAME must be a string')
+  return value
+}
 
-const parsed = schema.safeParse(import.meta.env)
-
-if (!parsed.success) {
-  // Fail fast at boot instead of failing mysteriously at runtime.
-  throw new Error(`Invalid environment variables:\n${z.prettifyError(parsed.error)}`)
+function readApiUrl(value: unknown): string {
+  if (value === undefined || value === '') return ''
+  if (typeof value !== 'string' || !URL.canParse(value)) {
+    // Fail fast at boot instead of failing mysteriously at runtime.
+    throw new Error(`Invalid environment variables:\nVITE_API_URL must be empty or a URL`)
+  }
+  return value
 }
 
 export const env = {
-  appName: parsed.data.VITE_APP_NAME,
+  appName: readAppName(import.meta.env.VITE_APP_NAME),
   /** API origin without trailing slash; empty string means same-origin. */
-  apiUrl: parsed.data.VITE_API_URL.replace(/\/+$/, ''),
+  apiUrl: readApiUrl(import.meta.env.VITE_API_URL).replace(/\/+$/, ''),
   isDev: import.meta.env.DEV,
 } as const

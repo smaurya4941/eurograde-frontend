@@ -24,14 +24,15 @@
   line-height: 1.3;
 }
 
+/* Article sections start at h2 (the page title is the h1). */
 .article-body h2 {
-  font-size: 24px;
-}
-.article-body h3 {
   font-size: 20px;
 }
-.article-body h4 {
+.article-body h3 {
   font-size: 18px;
+}
+.article-body h4 {
+  font-size: 17px;
 }
 .article-body :is(h5, h6) {
   font-size: 16px;
@@ -124,9 +125,6 @@
   .article-body p {
     margin-bottom: 20px;
   }
-  .article-body h2 {
-    font-size: 30px;
-  }
   .article-body li {
     font-size: 18px;
   }
@@ -147,10 +145,10 @@
 
 @media (min-width: 1280px) {
   .article-body h2 {
-    font-size: 36px;
+    font-size: 22px;
   }
   .article-body h3 {
-    font-size: 22px;
+    font-size: 19px;
   }
   .article-body blockquote p {
     font-size: 22px;

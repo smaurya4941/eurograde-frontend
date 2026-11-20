@@ -26,11 +26,11 @@ export function CountryCard({ country }: { country: Country }) {
         className="mb-5 size-[100px] rounded-full border-8 border-white object-cover sm:size-[120px]"
       />
 
-      <h3 className="border-b border-line pb-[15px] text-title font-semibold text-ink transition-colors duration-300 group-hover:border-line-light group-hover:text-white">
+      <h2 className="border-b border-line pb-[15px] text-title font-semibold text-ink transition-colors duration-300 group-hover:border-line-light group-hover:text-white">
         <Link to={href} className="focus-visible:underline">
           {country.name}
         </Link>
-      </h3>
+      </h2>
 
       <dl className="mt-[15px] font-semibold">
         {country.highlights.map((fact) => (

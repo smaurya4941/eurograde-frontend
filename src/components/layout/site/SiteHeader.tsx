@@ -25,7 +25,7 @@ export function SiteHeader() {
           className={cn(
             'z-30 w-full bg-white',
             isSticky
-              ? 'animate-header-in fixed inset-x-0 top-0 shadow-[0_10px_30px_-12px_rgb(15_23_42/0.18)]'
+              ? 'animate-header-in fixed inset-x-0 top-0 shadow-[0_10px_30px_-12px_color-mix(in_srgb,var(--color-ink)_18%,transparent)]'
               : 'relative',
           )}
         >

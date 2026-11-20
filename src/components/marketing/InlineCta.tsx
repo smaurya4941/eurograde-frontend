@@ -49,7 +49,10 @@ export function InlineCta({
         {text} –{' '}
         <Link
           to={to}
-          className="text-brand-600 underline underline-offset-4 transition-colors hover:text-brand-500"
+          className={cn(
+            'underline underline-offset-4 transition-colors hover:text-brand-500',
+            tone === 'dark' ? 'text-brand-on-dark' : 'text-brand-600',
+          )}
         >
           {linkLabel}
         </Link>

@@ -27,9 +27,9 @@ export function AboutIntroSection() {
             className="absolute bottom-0 -left-4 w-[88%] max-w-[484px] sm:bottom-[38px] sm:-left-[30px]"
           >
             <div className="rounded-xl bg-ink px-6 py-6 text-white shadow-card xl:px-[25px]">
-              <h3 className="text-lg font-bold text-white xl:text-[22px]">
+              <p className="text-lg font-bold text-white xl:text-[22px]">
                 300+ Students Studying Abroad
-              </h3>
+              </p>
               <p className="mt-3 text-[15px] text-white">
                 Thriving at 50+ global partner universities across Germany and Italy.
               </p>

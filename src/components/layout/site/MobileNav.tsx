@@ -44,13 +44,13 @@ export function MobileNav({ items }: { items: NavItem[] }) {
         <Menu aria-hidden="true" className="size-5" />
       </button>
 
-      {/* Backdrop */}
+      {/* Backdrop (the blur only applies while open: a full-screen backdrop filter is costly) */}
       <div
         aria-hidden="true"
         onClick={close}
         className={cn(
-          'fixed inset-0 z-40 bg-ink/60 backdrop-blur-sm transition-opacity duration-300',
-          open ? 'opacity-100' : 'pointer-events-none opacity-0',
+          'fixed inset-0 z-40 bg-ink/60 transition-opacity duration-300',
+          open ? 'opacity-100 backdrop-blur-sm' : 'pointer-events-none opacity-0',
         )}
       />
 
@@ -60,6 +60,8 @@ export function MobileNav({ items }: { items: NavItem[] }) {
         inert={!open}
         className={cn(
           'fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col overflow-y-auto bg-white shadow-2xl',
+          // Skips layout/paint of the drawer while it sits off-screen (closed).
+          '[content-visibility:auto]',
           'transition-transform duration-400 ease-out',
           open ? 'translate-x-0' : 'translate-x-full',
         )}

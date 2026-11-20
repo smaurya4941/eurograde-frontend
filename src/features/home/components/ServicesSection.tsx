@@ -18,7 +18,7 @@ import { ctaAvatars } from '../data/people'
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <article className="group flex h-full flex-col rounded-2xl bg-white p-[22px] transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgb(37_99_235/0.6)]">
+    <article className="group flex h-full flex-col rounded-2xl bg-white p-[22px] transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_color-mix(in_srgb,var(--color-brand-600)_60%,transparent)]">
       <div className="flex items-center gap-3 border-b border-line pb-5">
         <span className="flex size-[52px] shrink-0 items-center justify-center rounded-full bg-brand-600 transition-colors duration-500 group-hover:bg-ink">
           <img

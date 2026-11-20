@@ -16,7 +16,7 @@ export function SuccessStoryCard({ story }: { story: SuccessStory }) {
           className="aspect-[277/301] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
       </div>
-      <figcaption className="absolute inset-x-[5%] bottom-2.5 rounded-[28px] bg-ink px-3 py-2.5 text-center text-white shadow-[0_12px_30px_-12px_rgb(15_23_42/0.6)] xl:rounded-full">
+      <figcaption className="absolute inset-x-[5%] bottom-2.5 rounded-[28px] bg-ink px-3 py-2.5 text-center text-white shadow-[0_12px_30px_-12px_color-mix(in_srgb,var(--color-ink)_60%,transparent)] xl:rounded-full">
         <span className="block text-sm leading-[1.3] font-bold transition-colors duration-300 group-hover:text-brand-500 sm:text-[15px] xl:my-[5px] xl:text-lg">
           {story.name}
         </span>

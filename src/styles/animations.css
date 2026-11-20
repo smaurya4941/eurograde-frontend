@@ -11,7 +11,7 @@
     opacity 1s var(--ease-out-quad),
     transform 1s var(--ease-out-quad);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
+  /* No will-change: a permanent layer per revealed element costs memory and rendering time. */
 }
 [data-reveal='fade-up'] {
   transform: translate3d(0, 50px, 0);
@@ -65,6 +65,10 @@
 [data-split][data-inview='true'] .split-char {
   opacity: 1;
   transform: none;
+}
+/* Before the heading nears the viewport it is plain text: keep it hidden like the characters. */
+[data-split-text='plain'] {
+  opacity: 0;
 }
 
 /* ---------- Image wipe reveal (ImageReveal component) ---------- */
@@ -193,7 +197,7 @@
   position: relative;
   height: 8px;
   border-radius: 50px;
-  background: rgb(37 99 235 / 0.2);
+  background: color-mix(in srgb, var(--color-brand-600) 20%, transparent);
   overflow: hidden;
 }
 .swiper-progress .swiper-pagination-progressbar-fill {
@@ -240,7 +244,7 @@
   height: 6px;
   margin: 0 !important;
   border-radius: 0;
-  background: rgb(37 99 235 / 0.2);
+  background: color-mix(in srgb, var(--color-brand-600) 20%, transparent);
   opacity: 1;
   transition: background-color 0.35s ease;
 }
