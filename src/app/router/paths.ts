@@ -25,4 +25,29 @@ export const paths = {
   privacy: '/privacy-policy',
   terms: '/terms-and-conditions',
   cookies: '/cookie-policy',
+
+  // Admin CMS panel.
+  adminLogin: '/admin/login',
+  adminDashboard: '/admin',
+  adminPosts: '/admin/posts',
+  adminPostNew: '/admin/posts/new',
+  /** Route pattern; build links with `adminPostEditHref(id)`. */
+  adminPostEdit: '/admin/posts/:id/edit',
+  adminTeam: '/admin/team',
+  adminTeamNew: '/admin/team/new',
+  /** Route pattern; build links with `adminTeamEditHref(id)`. */
+  adminTeamEdit: '/admin/team/:id/edit',
+  adminTestimonials: '/admin/testimonials',
+  adminTestimonialNew: '/admin/testimonials/new',
+  /** Route pattern; build links with `adminTestimonialEditHref(id)`. */
+  adminTestimonialEdit: '/admin/testimonials/:id/edit',
+  adminCategories: '/admin/categories',
+  adminTags: '/admin/tags',
+  adminComments: '/admin/comments',
+  adminMessages: '/admin/messages',
+  adminSubscribers: '/admin/subscribers',
 } as const
+
+export const adminPostEditHref = (id: number) => `/admin/posts/${id}/edit`
+export const adminTeamEditHref = (id: number) => `/admin/team/${id}/edit`
+export const adminTestimonialEditHref = (id: number) => `/admin/testimonials/${id}/edit`

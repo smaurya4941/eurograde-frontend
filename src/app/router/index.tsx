@@ -49,4 +49,68 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    // Admin sign-in. Bare (no sidebar chrome) — AdminGuestRoute keeps a signed-in
+    // admin out, but a non-admin session can still see this page to switch accounts.
+    errorElement: <RouteErrorPage />,
+    children: [
+      {
+        lazy: async () => ({ Component: (await import('./guards')).AdminGuestRoute }),
+        children: [
+          { path: paths.adminLogin, lazy: page(() => import('@/pages/admin/AdminLoginPage')) },
+        ],
+      },
+    ],
+  },
+  {
+    // Admin CMS panel. Its layout, guards and forms are all lazy, so none of it
+    // (react-hook-form, zod) ever loads on the public marketing pages.
+    lazy: async () => ({
+      Component: (await import('@/components/layout/AdminLayout')).AdminLayout,
+    }),
+    errorElement: <RouteErrorPage />,
+    children: [
+      {
+        lazy: async () => ({ Component: (await import('./guards')).AdminRoute }),
+        children: [
+          {
+            path: paths.adminDashboard,
+            lazy: page(() => import('@/pages/admin/AdminDashboardPage')),
+          },
+          { path: paths.adminPosts, lazy: page(() => import('@/pages/admin/PostsListPage')) },
+          { path: paths.adminPostNew, lazy: page(() => import('@/pages/admin/PostFormPage')) },
+          { path: paths.adminPostEdit, lazy: page(() => import('@/pages/admin/PostFormPage')) },
+          { path: paths.adminTeam, lazy: page(() => import('@/pages/admin/TeamListPage')) },
+          { path: paths.adminTeamNew, lazy: page(() => import('@/pages/admin/TeamFormPage')) },
+          { path: paths.adminTeamEdit, lazy: page(() => import('@/pages/admin/TeamFormPage')) },
+          {
+            path: paths.adminTestimonials,
+            lazy: page(() => import('@/pages/admin/TestimonialsListPage')),
+          },
+          {
+            path: paths.adminTestimonialNew,
+            lazy: page(() => import('@/pages/admin/TestimonialFormPage')),
+          },
+          {
+            path: paths.adminTestimonialEdit,
+            lazy: page(() => import('@/pages/admin/TestimonialFormPage')),
+          },
+          {
+            path: paths.adminCategories,
+            lazy: page(() => import('@/pages/admin/CategoriesPage')),
+          },
+          { path: paths.adminTags, lazy: page(() => import('@/pages/admin/TagsPage')) },
+          {
+            path: paths.adminComments,
+            lazy: page(() => import('@/pages/admin/CommentsPage')),
+          },
+          { path: paths.adminMessages, lazy: page(() => import('@/pages/admin/MessagesPage')) },
+          {
+            path: paths.adminSubscribers,
+            lazy: page(() => import('@/pages/admin/SubscribersPage')),
+          },
+        ],
+      },
+    ],
+  },
 ])
