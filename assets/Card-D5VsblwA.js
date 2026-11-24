@@ -1,1 +1,0 @@
-import{v as e}from"./index-D2EQr0B_.js";import{t}from"./vendor-react-ZZkhsQa7.js";var n=t();function r({className:t,...r}){return(0,n.jsx)(`div`,{className:e(`rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8`,t),...r})}export{r as t};
