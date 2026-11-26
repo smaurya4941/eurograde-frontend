@@ -1,0 +1,34 @@
+/*
+ * Tokens for the old EuroGrade design (crimson + navy, Work Sans) used by the pages in
+ * `components/legacy`. Separate names (`legacy`, `legacy-navy`, `font-work`) so the Vistara
+ * palette used by the Home page is untouched.
+ */
+@theme {
+  --font-work: 'Work Sans Variable', 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+  --color-legacy: #9d1432;
+  --color-legacy-dark: #7d0f28;
+  --color-legacy-navy: #264065;
+  --color-legacy-text: #212529;
+  --color-legacy-muted: #6c757d;
+  --color-legacy-tint: #fdeced; /* pink section background */
+  --color-legacy-ice: #e8f0fe; /* visa cards */
+  --color-legacy-soft: #f6f6f6;
+  --color-legacy-panel: #f7f9fb;
+}
+
+/* Wrapper for every old-design page body: Work Sans, Bootstrap-like 14.4px body copy. */
+@utility legacy-page {
+  font-family: var(--font-work);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-legacy-text);
+  background: #fff;
+}
+
+@utility legacy-container {
+  @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10;
+}
+
+@utility legacy-h2 {
+  @apply font-work text-[28px] leading-tight font-medium text-legacy-text md:text-[40px];
+}

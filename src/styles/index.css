@@ -1,31 +1,33 @@
+@import '@fontsource-variable/work-sans';
 @import '@fontsource-variable/plus-jakarta-sans';
 @import 'tailwindcss';
 @import './animations.css';
 @import './article.css';
+@import './legacy.css';
 
 @theme {
   --font-sans:
     'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system,
     'Segoe UI', sans-serif;
 
-  /* Brand palette (Vistara accent blue) — change these to re-theme the whole app. */
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
-  --color-brand-800: #1e40af;
-  /* Accent text placed directly on dark (ink) backgrounds; same as 600 in this palette. */
-  --color-brand-on-dark: #2563eb;
+  /* Brand palette (EuroGrades crimson, same as the old-design pages) — change these to re-theme the whole app. */
+  --color-brand-50: #fdeced;
+  --color-brand-100: #f9d3d9;
+  --color-brand-200: #f0a8b5;
+  --color-brand-500: #c2304f;
+  --color-brand-600: #9d1432;
+  --color-brand-700: #7d0f28;
+  --color-brand-800: #5f0b1e;
+  /* Accent text placed directly on dark (ink) backgrounds: a light crimson tint for contrast. */
+  --color-brand-on-dark: #f0a8b5;
   /* Gradient over team photos. */
-  --color-card-overlay: #2563eb;
+  --color-card-overlay: #9d1432;
 
   /* Semantic site colours. */
-  --color-ink: #0f172a; /* headings, dark sections, footer */
-  --color-ink-soft: #1e2539; /* cards on dark backgrounds */
+  --color-ink: #1a2d4a; /* headings, dark sections, footer */
+  --color-ink-soft: #264065; /* cards on dark backgrounds */
   --color-body: #5b6b82; /* paragraph text (4.9:1 on surface, 5.4:1 on white) */
-  --color-surface: #f1f5f9; /* light section background */
+  --color-surface: #f6f6f6; /* light section background */
   --color-line: rgb(0 0 0 / 0.12); /* dividers on light */
   --color-line-light: rgb(255 255 255 / 0.15); /* dividers on dark */
 

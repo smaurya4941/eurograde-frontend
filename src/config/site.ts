@@ -53,36 +53,37 @@ export const socials: SocialLink[] = [
 
 export const mainNav: NavItem[] = [
   { label: 'Home', href: paths.home },
-  { label: 'About us', href: paths.about },
-  { label: 'Our Services', href: paths.services },
   {
     label: 'Countries',
-    href: paths.countries,
+    href: paths.germany,
     children: [
-      { label: 'All Countries', href: paths.countries },
-      { label: 'Study in Germany', href: `${paths.countries}/germany` },
-      { label: 'Study in Italy', href: `${paths.countries}/italy` },
+      { label: 'Germany', href: paths.germany },
+      { label: 'Italy', href: paths.italy },
     ],
   },
   {
-    label: 'Blog',
-    href: paths.blog,
-    children: [
-      { label: 'Latest Articles', href: paths.blog },
-      { label: 'Student Visa', href: `${paths.blog}?category=student-visa` },
-      { label: 'Immigration Tips', href: `${paths.blog}?category=immigration-tips` },
-    ],
+    label: 'Test Prep',
+    href: paths.ielts,
+    children: [{ label: 'IELTS', href: paths.ielts }],
   },
   {
-    label: 'Pages',
-    href: paths.team,
+    label: 'Language School',
+    href: paths.germanLanguage,
     children: [
-      { label: 'Our Team', href: paths.team },
-      { label: 'Testimonials', href: paths.testimonials },
-      { label: 'FAQs', href: paths.faqs },
-      { label: 'Image Gallery', href: paths.gallery },
+      { label: 'German', href: paths.germanLanguage },
+      { label: 'Italian', href: paths.italianLanguage },
     ],
   },
+  { label: 'About Us', href: paths.about },
+  {
+    label: 'Attestation Services',
+    href: paths.attestation,
+    children: [
+      { label: 'Attestation Services', href: paths.attestation },
+      { label: 'MEA Attestation', href: paths.meaAttestation },
+    ],
+  },
+  { label: 'Blogs', href: paths.blog },
   { label: 'Contact Us', href: paths.contact },
 ]
 

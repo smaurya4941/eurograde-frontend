@@ -27,3 +27,4 @@ export type {
   PostSummary,
   PostTag,
 } from './types'
+export { LegacyBlogGrid } from './components/legacy/LegacyBlogGrid'

@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn'
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   cn(
-    'inline-flex items-center gap-1 py-[33px] text-base font-medium transition-colors duration-300',
+    'inline-flex items-center gap-1 py-[33px] text-[15px] font-medium whitespace-nowrap transition-colors duration-300 xl:text-base',
     isActive ? 'text-brand-600' : 'text-ink hover:text-brand-600',
   )
 
@@ -13,7 +13,7 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
 export function DesktopNav({ items }: { items: NavItem[] }) {
   return (
     <nav aria-label="Main" className="hidden lg:block">
-      <ul className="flex items-center gap-6 xl:gap-[30px]">
+      <ul className="flex items-center gap-4 xl:gap-[26px]">
         {items.map((item) => (
           <li key={item.label} className="group/item relative">
             <NavLink to={item.href} end={item.href === '/'} className={linkClass}>

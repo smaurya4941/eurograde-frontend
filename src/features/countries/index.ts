@@ -5,3 +5,4 @@ export { CountryDetailSkeleton, CountryDetailView } from './components/detail/Co
 export { countryKeys, useCountries, useCountry } from './hooks'
 export { countryHref } from './utils'
 export type { Country, CountryDetail, CountryFact } from './types'
+export { LegacyCountryPage } from './components/legacy/LegacyCountryPage'

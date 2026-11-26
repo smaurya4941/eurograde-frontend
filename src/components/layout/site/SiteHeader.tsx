@@ -33,7 +33,7 @@ export function SiteHeader() {
             <Logo />
             <DesktopNav items={mainNav} />
             <div className="flex items-center gap-3">
-              <div className="hidden sm:block">
+              <div className="hidden xl:block">
                 <PillLink to={paths.eligibility}>Free Eligibility Check</PillLink>
               </div>
               <MobileNav items={mainNav} />

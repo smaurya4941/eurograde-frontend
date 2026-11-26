@@ -1,16 +1,11 @@
-import bannerImg from '@/assets/images/banners/about.webp'
-import { PageBanner } from '@/components/marketing'
+import bannerImg from '@/assets/images/legacy/about-bg.webp'
+import { LegacyBanner } from '@/components/legacy'
 import {
-  AboutFaqSection,
-  AboutIntroSection,
-  AboutWhyChooseSection,
-  ApproachSection,
-  ContactSection,
-  GlobalCtaSection,
-  InsightsSection,
-  StatsStripSection,
-  TeamCarouselSection,
-  VideoSection,
+  LegacyAboutIntro,
+  LegacyAboutStats,
+  LegacyMission,
+  LegacyPopularUniversities,
+  LegacySuccessStories,
 } from '@/features/about'
 import { usePageTitle } from '@/hooks/usePageTitle'
 
@@ -18,18 +13,13 @@ export default function AboutPage() {
   usePageTitle('About Us')
 
   return (
-    <>
-      <PageBanner title="About Us" image={bannerImg} breadcrumbs={[{ label: 'About us' }]} />
-      <AboutIntroSection />
-      <ApproachSection />
-      <AboutWhyChooseSection />
-      <StatsStripSection />
-      <VideoSection />
-      <ContactSection />
-      <TeamCarouselSection />
-      <AboutFaqSection />
-      <GlobalCtaSection />
-      <InsightsSection />
-    </>
+    <div className="legacy-page">
+      <LegacyBanner title="About Us" image={bannerImg} crumbs={[{ label: 'About' }]} />
+      <LegacyAboutIntro />
+      <LegacyAboutStats />
+      <LegacyPopularUniversities />
+      <LegacyMission />
+      <LegacySuccessStories />
+    </div>
   )
 }

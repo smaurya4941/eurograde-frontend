@@ -1,6 +1,6 @@
 import { Award, Earth, GraduationCap, Languages, Luggage, type LucideIcon } from 'lucide-react'
 import { paths } from '@/app/router/paths'
-import heroBg from '@/assets/images/backgrounds/home-hero-bg2.webp'
+import heroBg from '@/assets/images/backgrounds/home-hero-bg-crimson.webp'
 import heroGraphics from '@/assets/images/backgrounds/hero-graphics.webp'
 import heroStudent from '@/assets/images/home/hero-img-hm2.webp'
 import heroMap from '@/assets/images/home/hero-map-img.webp'

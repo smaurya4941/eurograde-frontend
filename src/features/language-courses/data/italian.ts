@@ -1,0 +1,127 @@
+import bannerImage from '@/assets/images/legacy/italy-bg.webp'
+import italyImage from '@/assets/images/legacy/italy.webp'
+import type { LanguageCourseContent } from '../types'
+import { commonFeatures, prosImage, testIcon } from './shared'
+
+export const italianCourse: LanguageCourseContent = {
+  name: 'Italian',
+  pageTitle: 'Italian Language Course',
+  bannerTitle: 'Structured Italian Language Training in India for Students & Professionals',
+  bannerImage,
+  crumbs: [{ label: 'Language School' }, { label: 'Italian Language' }],
+  intro: {
+    heading: 'Italian Language Course in India',
+    image: italyImage,
+    paragraphs: [
+      "Learning Italian is more than just picking up a new language—it’s opening doors to exciting opportunities across Europe, especially in Italy. Whether you're planning to study, or work abroad, fluency in Italian gives you a real edge in international environments.",
+      'At Eurogrades, our Italian Language Course is designed for ambitious learners in India who want to stand out. From basic A1 to advanced C1 levels, we help you build strong communication skills, understand the culture, and gain the confidence to thrive in Italian-speaking settings.',
+      'Led by experienced trainers, our classes blend interactive sessions with real-life scenarios—so you’re not just learning words, you’re learning to live the language. With flexible schedules and classes to fit your timelines, we make learning Italian accessible and effective.',
+    ],
+  },
+  why: {
+    subtitle: 'EuroGrades offers affordable Italian learning for a brighter future!',
+    features: [...commonFeatures, { icon: testIcon, label: 'CILS & CELI Exam Preparation' }],
+  },
+  levels: {
+    heading: 'Italian Language Learning Levels',
+    subtitle:
+      'Eurogrades offers structured courses to guide you through every step of the journey.',
+    items: [
+      {
+        code: 'A1',
+        title: 'A1 – Beginner',
+        tone: 'pink',
+        summary:
+          'You’ll learn basic phrases, greetings, and everyday vocabulary. Ideal for travelers or complete beginners starting their Italian journey.',
+        points: [
+          'Basic expressions to satisfy concrete needs.',
+          'Introducing themselves and others',
+          'Asking and answering simple questions',
+          'Simple interaction as long as the other person speaks slowly and clearly.',
+        ],
+      },
+      {
+        code: 'A2',
+        title: 'A2 – Elementary',
+        tone: 'pink',
+        summary:
+          'Understand commonly used expressions related to shopping, family, and local geography. Build confidence in short conversations and simple reading.',
+        points: [
+          'Understanding sentences and frequently used expressions',
+          'Simple communication and routine tasks',
+          'Explaining in simple terms aspects',
+        ],
+      },
+      {
+        code: 'B1',
+        title: 'B1 – Intermediate',
+        tone: 'navy',
+        summary:
+          'Start forming more complex sentences and handle travel situations, work-related conversations, and personal topics with more fluency.',
+        points: [
+          'Understanding the main points of clear standard input on familiar matters.',
+          'Dealing with most situations likely to arise while studying.',
+          'Producing simple connected texts on several topics.',
+          'Describing experiences and events, dreams, hopes, and ambitions',
+        ],
+      },
+      {
+        code: 'B2',
+        title: 'B2 – Upper Intermediate',
+        tone: 'navy',
+        summary:
+          'Communicate effectively and spontaneously. Understand more technical discussions and express opinions clearly—ideal for academic or work settings in Italy.',
+        points: [
+          'Understanding the main ideas of a complex text',
+          'Participating in technical discussions in their field of specialization.',
+          'Interacting with a degree of fluency and spontaneity.',
+          'Producing clear, detailed text on a wide range of subjects',
+          'Discussing a viewpoint on a topical issue',
+        ],
+      },
+      {
+        code: 'C1',
+        title: 'C1 – Advanced',
+        tone: 'gold',
+        summary:
+          'Master the language with ease. Read complex texts, write essays, and engage in fluent conversations without hesitation.',
+        points: [
+          'Understanding a wide range of demanding, and longer clauses.',
+          'Expressing ideas fluently and spontaneously.',
+          'Using language flexibly and effectively.',
+          'Producing clear, well-structured, detailed text on complex subjects.',
+        ],
+      },
+      {
+        code: 'C2',
+        title: 'C2 – Proficient',
+        tone: 'gold',
+        summary:
+          'Near-native fluency. You can understand virtually everything you hear or read and express yourself effortlessly in any context.',
+        points: [
+          'Understanding with ease virtually everything heard or read.',
+          'Summarizing information from different spoken and written sources',
+          'Reconstructing arguments and accounts.',
+          'Expressing themselves spontaneously',
+        ],
+      },
+    ],
+  },
+  pros: {
+    heading: 'Pros of Learning Italian Language',
+    image: prosImage,
+    points: [
+      'Knowing Italian opens doors to global careers, especially in fashion, automotive, art, culinary, and tourism sectors',
+      'Many top public universities in Italy offer affordable education, but understanding the language is key.',
+      'Bilingual professionals are in demand across industries. Italian adds a unique edge to your profile.',
+      'Italian is spoken by over 85 million people worldwide, giving you access to a broad international network.',
+      'From opera to Renaissance art and cuisine, learning Italian helps you experience the culture more deeply.',
+    ],
+  },
+  reviewsSubtitle:
+    'See what some of our students have to say about their Italian language learning experience with EuroGrades!',
+  reviewsCategory: 'italian',
+  faqCategory: 'italian-language',
+  faqSubtitle:
+    'Here’re some of the answers compiled to some of the most common queries students have when planning to study in Italy or other Italian-speaking regions.',
+}

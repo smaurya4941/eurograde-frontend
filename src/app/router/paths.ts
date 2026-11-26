@@ -14,6 +14,16 @@ export const paths = {
   /** Route pattern; build links with `countryHref(slug)`. */
   country: '/countries/:slug',
   blog: '/blog',
+  // Old EuroGrade design pages.
+  germany: '/germany',
+  italy: '/italy',
+  ielts: '/ielts',
+  germanLanguage: '/german-language',
+  italianLanguage: '/italian-language',
+  attestation: '/attestation-services',
+  meaAttestation: '/mea-attestation',
+  /** Prefix under which the previous (Vistara-design) pages stay reachable. */
+  vistara: '/vistara',
   /** Route pattern; build links with `blogPostHref(slug)`. */
   blogPost: '/blog/:slug',
   team: '/team',
