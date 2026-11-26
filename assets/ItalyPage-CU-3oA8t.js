@@ -1,0 +1,1 @@
+import{t as e}from"./LegacyCountryPage-Ca7tJMwf.js";import{t}from"./vendor-react-ZZkhsQa7.js";var n=t();function r(){return(0,n.jsx)(e,{slug:`italy`})}export{r as default};

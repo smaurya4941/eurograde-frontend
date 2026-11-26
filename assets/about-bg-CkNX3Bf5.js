@@ -1,0 +1,1 @@
+var e=`/assets/about-bg-BisaGUyo.webp`;export{e as t};

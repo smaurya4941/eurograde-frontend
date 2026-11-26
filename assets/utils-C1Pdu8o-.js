@@ -1,0 +1,1 @@
+import{i as e}from"./paths-BvvZkAVz.js";function t(t,n){return`${e.countries}/${t}${n?`#${n}`:``}`}export{t};

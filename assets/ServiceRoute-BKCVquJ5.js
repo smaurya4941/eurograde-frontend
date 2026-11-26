@@ -1,0 +1,1 @@
+import{t as e}from"./ServiceRedirect-DykMVUdX.js";import t from"./ServicePage-a6odj5G2.js";import{t as n}from"./vendor-react-ZZkhsQa7.js";var r=n();function i(){return(0,r.jsx)(e,{fallback:(0,r.jsx)(t,{})})}export{i as default};

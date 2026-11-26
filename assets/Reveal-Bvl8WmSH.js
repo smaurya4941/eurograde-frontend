@@ -1,0 +1,1 @@
+import{T as e}from"./index-JzraAdzo.js";import{t}from"./vendor-react-ZZkhsQa7.js";var n=t();function r({children:t,variant:r=`fade-up`,delay:i=0,className:a}){let{ref:o,inView:s}=e();return(0,n.jsx)(`div`,{ref:o,"data-reveal":r,"data-inview":s,className:a,style:i?{"--reveal-delay":`${i}ms`}:void 0,children:t})}export{r as t};

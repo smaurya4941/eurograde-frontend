@@ -1,1 +1,0 @@
-import{E as e}from"./index-CrrToUct.js";function t(t,n){if(!(t instanceof e))return`An unexpected error occurred.`;if(t.isValidation&&Object.keys(t.errors).length>0){for(let[e,r]of Object.entries(t.errors))n(e,{type:`server`,message:r[0]});return null}return t.message}export{t};

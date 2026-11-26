@@ -1,0 +1,1 @@
+import{s as e,t}from"./vendor-react-ZZkhsQa7.js";var n=t();function r(){return(0,n.jsx)(e,{to:`/`,replace:!0})}export{r as default};
