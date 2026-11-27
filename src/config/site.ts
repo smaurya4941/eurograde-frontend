@@ -51,8 +51,12 @@ export const socials: SocialLink[] = [
   { network: 'youtube', label: 'YouTube', href: 'https://youtube.com' },
 ]
 
+/** Headlines scrolling in the top bar "Trending" ticker (from the old site). */
+export const trendingNews: string[] = [
+  'India Today – Why is Italy becoming the preferred study abroad destination',
+]
+
 export const mainNav: NavItem[] = [
-  { label: 'Home', href: paths.home },
   {
     label: 'Countries',
     href: paths.germany,
@@ -87,38 +91,31 @@ export const mainNav: NavItem[] = [
   { label: 'Contact Us', href: paths.contact },
 ]
 
+/** Children of the main-nav group with this label (keeps the footer in sync with the header). */
+const navChildren = (label: string): NavItem[] =>
+  mainNav.find((item) => item.label === label)?.children ?? []
+
+/** Footer link columns, built from `mainNav` so both always list the same pages. */
 export const footerColumns: { title: string; links: NavItem[] }[] = [
   {
     title: 'Quick Links',
     links: [
       { label: 'Home', href: paths.home },
-      { label: 'About us', href: paths.about },
-      { label: 'Our Services', href: paths.services },
-      { label: 'Latest Blogs', href: paths.blog },
-      { label: 'Contact Us', href: paths.contact },
+      ...mainNav.filter((item) => !item.children).map(({ label, href }) => ({ label, href })),
     ],
   },
   {
-    // Replaced at runtime by the active services from the API (see SiteFooter).
-    title: 'Our Services',
+    title: 'Countries & Test Prep',
     links: [
-      { label: 'Study in Germany', href: `${paths.services}/study-in-germany` },
-      { label: 'Study in Italy', href: `${paths.services}/study-in-italy` },
-      { label: 'IELTS Preparation', href: `${paths.services}/ielts-preparation` },
-      { label: 'German Language Course', href: `${paths.services}/german-language-course` },
-      { label: 'Italian Language Course', href: `${paths.services}/italian-language-course` },
-      { label: 'Attestation Services', href: `${paths.services}/attestation-services` },
+      ...navChildren('Countries').map((l) => ({ ...l, label: `Study in ${l.label}` })),
+      ...navChildren('Test Prep').map((l) => ({ ...l, label: `${l.label} Preparation` })),
     ],
   },
   {
-    title: 'Popular Study Cities',
+    title: 'Language & Attestation',
     links: [
-      { label: 'Munich, Germany', href: `${paths.countries}/germany` },
-      { label: 'Berlin, Germany', href: `${paths.countries}/germany` },
-      { label: 'Frankfurt, Germany', href: `${paths.countries}/germany` },
-      { label: 'Rome, Italy', href: `${paths.countries}/italy` },
-      { label: 'Milan, Italy', href: `${paths.countries}/italy` },
-      { label: 'Bologna, Italy', href: `${paths.countries}/italy` },
+      ...navChildren('Language School').map((l) => ({ ...l, label: `${l.label} Language Course` })),
+      ...navChildren('Attestation Services'),
     ],
   },
 ]

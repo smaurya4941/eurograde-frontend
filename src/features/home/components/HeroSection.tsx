@@ -33,11 +33,11 @@ export function HeroSection() {
         alt=""
         aria-hidden="true"
         fetchPriority="high"
-        className="animate-float pointer-events-none absolute top-0 left-[37%] hidden w-[68%] max-w-none lg:block"
+        className="animate-float pointer-events-none absolute top-0 left-[60%] hidden w-[44%] max-w-none lg:block"
       />
 
-      <div className="relative container-site lg:min-h-[820px] xl:min-h-[900px]">
-        <div className="relative z-10 pt-14 sm:pt-20 lg:max-w-[62%] lg:pt-[150px] lg:pb-[88px] xl:max-w-[970px] xl:pt-[225px]">
+      <div className="relative container-site lg:min-h-[640px] xl:min-h-[clamp(640px,calc(100svh-135px),780px)]">
+        <div className="relative z-10 pt-14 sm:pt-20 lg:max-w-[62%] lg:pt-[70px] lg:pb-[56px] xl:max-w-[970px] xl:pt-[80px]">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-[15px] leading-none font-bold text-brand-600 uppercase xl:text-[17px]">
               <Earth aria-hidden="true" className="size-[18px]" />
@@ -71,7 +71,7 @@ export function HeroSection() {
             </PillLink>
           </Reveal>
 
-          <ul className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:mt-[110px]">
+          <ul className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:mt-[56px]">
             {highlights.map(({ icon: Icon, label }, i) => (
               <li key={label}>
                 <Reveal variant="zoom-in" delay={i * 120} className="group">
@@ -88,7 +88,7 @@ export function HeroSection() {
         </div>
 
         {/* Student cut-out + review card */}
-        <div className="relative mx-auto mt-10 w-full max-w-[420px] lg:absolute lg:right-0 lg:bottom-0 lg:mt-0 lg:w-[420px] xl:w-[525px] xl:max-w-none">
+        <div className="relative mx-auto mt-10 w-full max-w-[420px] lg:absolute lg:right-0 lg:bottom-0 lg:mt-0 lg:w-[420px] xl:w-[470px] xl:max-w-none">
           <Reveal variant="fade-left">
             <img
               src={heroStudent}

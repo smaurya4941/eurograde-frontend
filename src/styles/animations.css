@@ -177,6 +177,23 @@
   animation: header-slide-down 0.5s var(--ease-out-quad);
 }
 
+/* Top bar "Trending" ticker: content is rendered twice, so -50% loops seamlessly. */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-ticker {
+  animation: ticker-scroll 25s linear infinite;
+}
+.ticker:hover .animate-ticker,
+.ticker:focus-within .animate-ticker {
+  animation-play-state: paused;
+}
+
 /* Photo switching in the Lightbox component. */
 @keyframes lightbox-in {
   from {
@@ -275,6 +292,7 @@
   }
   .animate-swing,
   .animate-float,
+  .animate-ticker,
   .animate-header-in,
   .animate-lightbox-in {
     animation: none !important;

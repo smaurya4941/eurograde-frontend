@@ -1,5 +1,6 @@
 import { Clock, Mail, Phone } from 'lucide-react'
 import { SocialIcon } from '@/components/icons/SocialIcon'
+import { trendingNews } from '@/config/site'
 import { useContact, useSocials } from '@/features/site-settings'
 
 /** Slim navy contact strip above the main navigation (hidden on small screens). */
@@ -34,6 +35,29 @@ export function TopBar() {
             {contact.hours.replace('–', '-')}
           </li>
         </ul>
+
+        {trendingNews.length > 0 && (
+          <div className="mx-6 hidden min-w-0 flex-1 items-center gap-3 xl:flex">
+            <span className="shrink-0 rounded-full bg-white px-3 py-1 text-[13px] leading-none font-bold text-ink uppercase">
+              Trending
+            </span>
+            <div className="ticker min-w-0 flex-1 overflow-hidden">
+              <ul className="animate-ticker flex w-max items-center">
+                {[...trendingNews, ...trendingNews, ...trendingNews, ...trendingNews].map(
+                  (headline, i) => (
+                    <li
+                      key={`${headline}-${i}`}
+                      aria-hidden={i >= trendingNews.length}
+                      className="shrink-0 pr-16 whitespace-nowrap"
+                    >
+                      {headline}
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+          </div>
+        )}
 
         <ul className="flex items-center gap-4" aria-label="Social media">
           {socials.map((s) => (

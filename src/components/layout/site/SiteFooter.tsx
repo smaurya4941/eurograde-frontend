@@ -5,7 +5,6 @@ import { Logo } from '@/components/brand/Logo'
 import { SocialIcon } from '@/components/icons/SocialIcon'
 import { env } from '@/config/env'
 import { footerColumns, legalLinks } from '@/config/site'
-import { serviceHref, useServices } from '@/features/services'
 import { useContact, useSocials } from '@/features/site-settings'
 import { NewsletterForm } from './NewsletterForm'
 
@@ -14,13 +13,6 @@ const CURRENT_YEAR = new Date().getFullYear()
 export function SiteFooter() {
   const contact = useContact()
   const socials = useSocials()
-  const { data: services } = useServices()
-  // The services column lists the live services; the static links are only the fallback.
-  const columns = footerColumns.map((column) =>
-    column.title === 'Our Services' && services && services.length > 0
-      ? { ...column, links: services.map((s) => ({ label: s.title, href: serviceHref(s.slug) })) }
-      : column,
-  )
   // Each item can show several lines (both office numbers, weekday + Saturday hours).
   const contactItems: {
     icon: LucideIcon
@@ -72,7 +64,7 @@ export function SiteFooter() {
 
         {/* Link columns */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16">
-          {columns.map((column) => (
+          {footerColumns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
               <h2 className="text-lg font-bold text-white uppercase">{column.title}</h2>
               <ul className="mt-6 space-y-3">
