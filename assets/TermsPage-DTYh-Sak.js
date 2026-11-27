@@ -1,0 +1,1 @@
+import{i as e,t}from"./LegalPageView-C2X4txGD.js";import{t as n}from"./vendor-react-ZZkhsQa7.js";var r=n();function i(){return(0,r.jsx)(t,{doc:e})}export{i as default};

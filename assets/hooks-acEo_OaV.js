@@ -1,1 +1,0 @@
-import{r as e}from"./vendor-data-DbhDywKh.js";import{l as t}from"./index-JzraAdzo.js";var n={list:async(e={})=>(await t.get(`/team-members`,{params:e})).data},r={all:[`team-members`],list:e=>[...r.all,{limit:e??null}]};function i({limit:t}={}){return e({queryKey:r.list(t),queryFn:()=>n.list(t?{limit:t}:{}),staleTime:6e5})}export{i as n,r as t};
