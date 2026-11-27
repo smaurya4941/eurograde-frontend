@@ -1,1 +1,0 @@
-import{r as e}from"./rolldown-runtime-XKyaHtl9.js";import{g as t}from"./vendor-react-ZZkhsQa7.js";import{m as n}from"./index-KqzHa_mR.js";var r=e(t(),1);function i(e){(0,r.useEffect)(()=>{document.title=e?`${e} — ${n.appName}`:n.appName},[e])}export{i as t};

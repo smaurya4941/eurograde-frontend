@@ -1,1 +1,0 @@
-import{t as e}from"./LegacyCountryPage-CQwoihcY.js";import{t}from"./vendor-react-ZZkhsQa7.js";var n=t();function r(){return(0,n.jsx)(e,{slug:`germany`})}export{r as default};

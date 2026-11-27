@@ -1,0 +1,1 @@
+import{n as e}from"./vendor-data-DbhDywKh.js";import{s as t}from"./index-DgKvGP6E.js";var n={submit:async e=>(await t.post(`/contact-messages`,e)).message??`Thank you! Your message has been sent.`};function r(){return e({mutationFn:n.submit})}export{r as t};
