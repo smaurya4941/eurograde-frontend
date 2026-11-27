@@ -10,7 +10,7 @@ export function LegacyAboutStats() {
   ]
 
   return (
-    <section aria-label="EuroGrades in numbers" className="py-8 md:py-12">
+    <section aria-label="EuroRank in numbers" className="py-8 md:py-12">
       <div className="legacy-container">
         <dl className="mx-auto flex max-w-[1100px] flex-col rounded-tr-[40px] rounded-bl-[40px] bg-legacy px-6 py-4 text-white md:flex-row md:px-12 md:py-8">
           {stats.map(({ stat, label }) => (

@@ -5,14 +5,14 @@ export const ieltsCopy = {
     paragraphs: [
       'The International English Language Testing System (IELTS) is a globally recognized English proficiency exam designed for individuals who want to study, work, or migrate to English-speaking countries. It assesses four key language skills: Listening, Reading, Writing, and Speaking. IELTS is accepted by universities, employers, immigration authorities, and professional organizations in countries such as Canada, the UK, Australia, and New Zealand.',
       'The test is scored on a 9-band scale, with each band representing a specific level of proficiency, from non-user (Band 1) to expert user (Band 9). With no pass or fail, IELTS measures your ability to communicate effectively in English, making it a key requirement for various opportunities abroad.',
-      'At Eurogrades, we provide structured IELTS preparation courses to help you achieve your desired band score with expert guidance and practice.',
+      'At EuroRank, we provide structured IELTS preparation courses to help you achieve your desired band score with expert guidance and practice.',
     ],
   },
   why: {
     badge: 'Why Us?',
-    heading: 'Why EuroGrades for IELTS Preparation?',
+    heading: 'Why EuroRank for IELTS Preparation?',
     intro:
-      'At Eurogrades, we offer a structured, result-driven approach that ensures you’re fully equipped for the exam.',
+      'At EuroRank, we offer a structured, result-driven approach that ensures you’re fully equipped for the exam.',
     points: [
       'Expert Instructors',
       'Comprehensive Study Material',

@@ -1,6 +1,6 @@
-# EuroGrades
+# EuroRank
 
-> EuroGrades is a study-abroad consultancy (New Delhi office) that helps students get admission to affordable, high-quality public universities in Germany and Italy, with IELTS preparation, German and Italian language courses and document attestation services.
+> EuroRank is a study-abroad consultancy (New Delhi office) that helps students get admission to affordable, high-quality public universities in Germany and Italy, with IELTS preparation, German and Italian language courses and document attestation services.
 
 ## Study destinations
 
@@ -20,8 +20,8 @@
 
 ## Company
 
-- [About EuroGrades](/about)
+- [About EuroRank](/about)
 - [Student testimonials](/testimonials)
 - [Frequently asked questions](/faqs)
 - [Blog](/blog)
-- [Contact](/contact): +44 20 4154 2541, contact@eurogrades.com
+- [Contact](/contact): +44 20 4154 2541, contact@eurorank.com

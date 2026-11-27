@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { Navigate, useParams } from 'react-router'
 import { paths } from './paths'
 
-/** Service/country slugs that have a dedicated page in the EuroGrade (old) design. */
+/** Service/country slugs that have a dedicated page in the EuroRank (old) design. */
 const dedicatedPages: Record<string, string> = {
   'study-in-germany': paths.germany,
   germany: paths.germany,

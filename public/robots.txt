@@ -1,4 +1,4 @@
-# EuroGrades — study abroad consultancy (Germany & Italy)
+# EuroRank — study abroad consultancy (Germany & Italy)
 User-agent: *
 Allow: /
 Disallow: /dashboard

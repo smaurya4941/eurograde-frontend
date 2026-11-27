@@ -41,10 +41,10 @@ export const languageReviewsCopy = {
     { text: ' from Our German & Italian Language Students' },
   ] satisfies HeadingPart[],
   description:
-    'Hear from learners who built their German and Italian skills with EuroGrades, from complete beginners to confident speakers ready for study, work and life in Europe.',
+    'Hear from learners who built their German and Italian skills with EuroRank, from complete beginners to confident speakers ready for study, work and life in Europe.',
   cta: { label: 'Book Free Consultation', to: paths.contact },
   categories: ['german', 'italian'] satisfies TestimonialCategory[],
 }
 
-/** Placeholder story video (same as the About page) until EuroGrades provides its own. */
+/** Placeholder story video (same as the About page) until EuroRank provides its own. */
 export const STORY_VIDEO = { youtubeId: '9jo51nJrO0k', title: 'Watch our story' } as const

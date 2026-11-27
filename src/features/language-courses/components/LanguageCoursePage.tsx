@@ -49,7 +49,7 @@ export function LanguageCoursePage({ content }: { content: LanguageCourseContent
 
       <section className="bg-legacy-tint py-12 md:py-20">
         <div className="legacy-container">
-          <LegacySectionTitle title="Why EuroGrades?" subtitle={why.subtitle} />
+          <LegacySectionTitle title="Why EuroRank?" subtitle={why.subtitle} />
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {why.features.map((f) => (
               <li key={f.label} className="rounded-lg bg-white p-4 text-center">

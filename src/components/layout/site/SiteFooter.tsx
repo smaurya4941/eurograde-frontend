@@ -56,7 +56,7 @@ export function SiteFooter() {
         {/* Brand + newsletter */}
         <div className="grid gap-10 border-b border-line-light py-14 lg:grid-cols-[1fr_auto] lg:py-16 xl:grid-cols-2">
           <div className="max-w-[560px]">
-            <Logo tone="light" imageClassName="h-12 xl:h-[58px]" />
+            <Logo tone="light" textClassName="text-[32px] xl:text-[38px]" />
             <p className="mt-6 text-white">
               Connecting students with top public universities in Germany and Italy, making quality
               education abroad affordable and stress-free.

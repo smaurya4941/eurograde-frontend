@@ -8,7 +8,7 @@ export function ServiceWhySection({ service }: { service: ServiceDetail }) {
   if (!why.title) return null
 
   return (
-    <section aria-label={`Why choose EuroGrades for ${service.title}`}>
+    <section aria-label={`Why choose EuroRank for ${service.title}`}>
       <SectionHeading
         badgeClassName={detailBadgeClass}
         badge="Why Us"

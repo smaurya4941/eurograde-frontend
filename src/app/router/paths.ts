@@ -14,7 +14,7 @@ export const paths = {
   /** Route pattern; build links with `countryHref(slug)`. */
   country: '/countries/:slug',
   blog: '/blog',
-  // Old EuroGrade design pages.
+  // Old EuroRank design pages.
   germany: '/germany',
   italy: '/italy',
   ielts: '/ielts',

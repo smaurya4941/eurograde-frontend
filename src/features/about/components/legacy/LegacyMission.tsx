@@ -63,12 +63,12 @@ function Item({ value, side }: { value: Value; side: 'left' | 'right' }) {
   )
 }
 
-/** "EuroGrades’ Mission and Values" two-sided timeline (stacks on mobile). */
+/** "EuroRank’s Mission and Values" two-sided timeline (stacks on mobile). */
 export function LegacyMission() {
   return (
     <section aria-label="Mission and values" className="py-12 md:py-20">
       <div className="legacy-container">
-        <h2 className="text-center legacy-h2 md:text-[44px]">EuroGrades’ Mission and Values</h2>
+        <h2 className="text-center legacy-h2 md:text-[44px]">EuroRank’s Mission and Values</h2>
         <div className="relative grid gap-x-16 py-10 lg:grid-cols-2 lg:py-16">
           <div
             aria-hidden="true"

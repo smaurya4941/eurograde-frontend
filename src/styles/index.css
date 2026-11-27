@@ -10,7 +10,7 @@
     'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system,
     'Segoe UI', sans-serif;
 
-  /* Brand palette (EuroGrades crimson, same as the old-design pages) — change these to re-theme the whole app. */
+  /* Brand palette (EuroRank crimson, same as the old-design pages) — change these to re-theme the whole app. */
   --color-brand-50: #fdeced;
   --color-brand-100: #f9d3d9;
   --color-brand-200: #f0a8b5;

@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     errorElement: <RouteErrorPage />,
     children: [
       { path: paths.home, lazy: page(() => import('@/pages/HomePage')) },
-      // Old EuroGrade design pages.
+      // Old EuroRank design pages.
       { path: paths.about, lazy: page(() => import('@/pages/AboutPage')) },
       { path: paths.contact, lazy: page(() => import('@/pages/ContactPage')) },
       { path: paths.blog, lazy: page(() => import('@/pages/BlogPage')) },
@@ -27,6 +27,10 @@ export const router = createBrowserRouter([
       { path: paths.italianLanguage, lazy: page(() => import('@/pages/ItalianLanguagePage')) },
       { path: paths.attestation, lazy: page(() => import('@/pages/AttestationPage')) },
       { path: paths.meaAttestation, lazy: page(() => import('@/pages/MeaAttestationPage')) },
+      { path: paths.team, lazy: page(() => import('@/pages/TeamPage')) },
+      { path: paths.privacy, lazy: page(() => import('@/pages/PrivacyPage')) },
+      { path: paths.terms, lazy: page(() => import('@/pages/TermsPage')) },
+      { path: paths.cookies, lazy: page(() => import('@/pages/CookiePage')) },
       // Pages with no old-site counterpart keep the Vistara design.
       { path: paths.blogPost, lazy: page(() => import('@/pages/vistara/BlogPostPage')) },
       { path: paths.testimonials, lazy: page(() => import('@/pages/vistara/TestimonialsPage')) },

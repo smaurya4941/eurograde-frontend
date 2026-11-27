@@ -7,7 +7,7 @@ import it from '@/assets/images/flags/it-ico.svg'
  */
 
 /** YouTube video shown in the "Watch Video" lightbox. */
-export const ABOUT_VIDEO = { youtubeId: '9jo51nJrO0k', title: 'How EuroGrades works' } as const
+export const ABOUT_VIDEO = { youtubeId: '9jo51nJrO0k', title: 'How EuroRank works' } as const
 
 export const approachCards = [
   {
@@ -22,7 +22,7 @@ export const approachCards = [
   },
 ] as const
 
-/** EuroGrades’ mission and values. */
+/** EuroRank’s mission and values. */
 export const reasons = [
   {
     title: 'Quality Education',

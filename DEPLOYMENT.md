@@ -1,4 +1,4 @@
-# Deploying the EuroGrades website to Plesk
+# Deploying the EuroRank website to Plesk
 
 Staging: **https://eurograde.ureligible.com** (API: https://eurogradeapi.ureligible.com).
 
@@ -22,7 +22,7 @@ Never push to `deploy` by hand.
    | ---------------- | --------------------------------------------- |
    | `VITE_API_URL`   | `https://eurogradeapi.ureligible.com`         |
    | `ALLOW_INDEXING` | `false` (set `true` only on the final domain) |
-   | `VITE_APP_NAME`  | optional, defaults to `EuroGrades`            |
+   | `VITE_APP_NAME`  | optional, defaults to `EuroRank`              |
 
 2. **Settings → Actions → General → Workflow permissions**: "Read and write permissions".
 3. Run the workflow once (**Actions → Build and publish deploy branch → Run workflow**) so the

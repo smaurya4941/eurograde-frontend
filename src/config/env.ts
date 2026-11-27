@@ -4,7 +4,7 @@
  */
 
 function readAppName(value: unknown): string {
-  if (value === undefined || value === '') return 'EuroGrades'
+  if (value === undefined || value === '') return 'EuroRank'
   if (typeof value !== 'string') throw new Error('VITE_APP_NAME must be a string')
   return value
 }

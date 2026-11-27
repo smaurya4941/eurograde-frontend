@@ -28,7 +28,7 @@ export function CtaBannerSection() {
                   { text: 'Your Dreams Deserve ' },
                   { text: 'The Right Guidance', highlight: true },
                 ]}
-                description="EuroGrades is your first step towards an international degree without breaking the bank. Talk to an expert for free about admissions, scholarships, student visas and pre-departure preparation."
+                description="EuroRank is your first step towards an international degree without breaking the bank. Talk to an expert for free about admissions, scholarships, student visas and pre-departure preparation."
               />
               <Reveal delay={200} className="mt-8">
                 <PillLink to={paths.contact}>Start Your Journey</PillLink>

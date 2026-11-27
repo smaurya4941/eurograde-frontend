@@ -6,7 +6,7 @@ export function StatsStripSection() {
   const stats = useStats()
 
   return (
-    <section aria-label="EuroGrades in numbers" className="bg-brand-600 py-12 xl:py-[60px]">
+    <section aria-label="EuroRank in numbers" className="bg-brand-600 py-12 xl:py-[60px]">
       <dl className="container-site grid gap-8 sm:grid-cols-3 sm:gap-0">
         {stats.map((stat, i) => (
           <Reveal

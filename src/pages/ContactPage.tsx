@@ -4,7 +4,7 @@ import { LegacyContactForm, LegacyContactInfo } from '@/features/contact'
 import { paths } from '@/app/router/paths'
 import { usePageTitle } from '@/hooks/usePageTitle'
 
-/** Fragment of `paths.eligibility`, so "Free Eligibility Check" lands on the form. */
+/** Fragment of `paths.eligibility`, so "Request a call" lands on the form. */
 const formAnchor = paths.eligibility.split('#')[1]
 
 export default function ContactPage() {

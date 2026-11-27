@@ -30,7 +30,7 @@ export function WhyChooseSection() {
           <Reveal variant="fade-up">
             <img
               src={graduate}
-              alt="EuroGrades graduates taking a selfie in their caps and gowns"
+              alt="EuroRank graduates taking a selfie in their caps and gowns"
               width={659}
               height={613}
               loading="lazy"

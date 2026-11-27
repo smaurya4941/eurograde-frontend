@@ -34,7 +34,7 @@ export function SiteHeader() {
             <DesktopNav items={mainNav} />
             <div className="flex items-center gap-3">
               <div className="hidden xl:block">
-                <PillLink to={paths.eligibility}>Free Eligibility Check</PillLink>
+                <PillLink to={paths.eligibility}>Request a call</PillLink>
               </div>
               <MobileNav items={mainNav} />
             </div>

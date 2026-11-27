@@ -14,18 +14,17 @@ export const italianCourse: LanguageCourseContent = {
     image: italyImage,
     paragraphs: [
       "Learning Italian is more than just picking up a new language—it’s opening doors to exciting opportunities across Europe, especially in Italy. Whether you're planning to study, or work abroad, fluency in Italian gives you a real edge in international environments.",
-      'At Eurogrades, our Italian Language Course is designed for ambitious learners in India who want to stand out. From basic A1 to advanced C1 levels, we help you build strong communication skills, understand the culture, and gain the confidence to thrive in Italian-speaking settings.',
+      'At EuroRank, our Italian Language Course is designed for ambitious learners in India who want to stand out. From basic A1 to advanced C1 levels, we help you build strong communication skills, understand the culture, and gain the confidence to thrive in Italian-speaking settings.',
       'Led by experienced trainers, our classes blend interactive sessions with real-life scenarios—so you’re not just learning words, you’re learning to live the language. With flexible schedules and classes to fit your timelines, we make learning Italian accessible and effective.',
     ],
   },
   why: {
-    subtitle: 'EuroGrades offers affordable Italian learning for a brighter future!',
+    subtitle: 'EuroRank offers affordable Italian learning for a brighter future!',
     features: [...commonFeatures, { icon: testIcon, label: 'CILS & CELI Exam Preparation' }],
   },
   levels: {
     heading: 'Italian Language Learning Levels',
-    subtitle:
-      'Eurogrades offers structured courses to guide you through every step of the journey.',
+    subtitle: 'EuroRank offers structured courses to guide you through every step of the journey.',
     items: [
       {
         code: 'A1',
@@ -119,7 +118,7 @@ export const italianCourse: LanguageCourseContent = {
     ],
   },
   reviewsSubtitle:
-    'See what some of our students have to say about their Italian language learning experience with EuroGrades!',
+    'See what some of our students have to say about their Italian language learning experience with EuroRank!',
   reviewsCategory: 'italian',
   faqCategory: 'italian-language',
   faqSubtitle:

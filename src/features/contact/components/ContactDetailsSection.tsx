@@ -6,7 +6,7 @@ import { SectionHeading } from '@/components/marketing'
 import { useContact } from '@/features/site-settings'
 import { ContactForm } from './ContactForm'
 
-/** Fragment of `paths.eligibility`, so the header's "Free Eligibility Check" lands on the form. */
+/** Fragment of `paths.eligibility`, so the header's "Request a call" lands on the form. */
 const formAnchor = paths.eligibility.split('#')[1]
 
 interface QuickContact {

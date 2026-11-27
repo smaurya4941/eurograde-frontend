@@ -57,7 +57,7 @@ export default function IeltsPage() {
             <div className="overflow-hidden rounded-3xl">
               <img
                 src={whyImage}
-                alt="EuroGrades IELTS students"
+                alt="EuroRank IELTS students"
                 loading="lazy"
                 className="h-auto w-full"
               />

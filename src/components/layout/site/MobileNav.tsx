@@ -67,7 +67,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
         )}
       >
         <div className="flex items-center justify-between border-b border-line px-5 py-4">
-          <Logo imageClassName="h-9" />
+          <Logo textClassName="text-[26px] xl:text-[26px]" />
           <button
             type="button"
             aria-label="Close menu"
@@ -140,7 +140,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
 
         <div className="space-y-4 border-t border-line px-5 py-6">
           <PillLink to={paths.eligibility} className="w-full justify-center">
-            Free Eligibility Check
+            Request a call
           </PillLink>
           <p className="text-sm">
             <a href={contact.phoneHref} className="font-semibold text-ink">

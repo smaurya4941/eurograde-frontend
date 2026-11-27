@@ -100,7 +100,7 @@ export function TestimonialsSection() {
           />
           <Reveal delay={150} className="lg:self-start lg:pt-2">
             <p className="max-w-[600px]">
-              Hear from students who turned their study abroad dreams into reality with EuroGrades,
+              Hear from students who turned their study abroad dreams into reality with EuroRank,
               thriving at top universities and building bright futures.
             </p>
             <PillLink to={paths.testimonials} className="mt-6">

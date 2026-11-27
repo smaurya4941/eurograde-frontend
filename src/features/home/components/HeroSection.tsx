@@ -58,9 +58,9 @@ export function HeroSection() {
 
           <Reveal delay={200}>
             <p className="mt-4 max-w-[800px] text-body">
-              EuroGrades connects students with top public universities in countries like Germany
-              and Italy, making quality education abroad affordable and stress-free. From choosing
-              the right course to your student visa and arrival, we guide you at every step.
+              EuroRank connects students with top public universities in countries like Germany and
+              Italy, making quality education abroad affordable and stress-free. From choosing the
+              right course to your student visa and arrival, we guide you at every step.
             </p>
           </Reveal>
 

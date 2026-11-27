@@ -122,7 +122,7 @@ export function ServicesSection() {
             { text: 'Guided By Experts', highlight: true },
           ]}
           titleClassName="max-w-[870px]"
-          description="From admission to Germany’s and Italy’s top public universities to IELTS prep and language courses, EuroGrades supports you at every stage of your study abroad journey."
+          description="From admission to Germany’s and Italy’s top public universities to IELTS prep and language courses, EuroRank supports you at every stage of your study abroad journey."
         />
 
         <ServicesCarousel />

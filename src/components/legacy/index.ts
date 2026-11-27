@@ -1,4 +1,4 @@
-// Shared building blocks for the old EuroGrade design pages.
+// Shared building blocks for the old EuroRank design pages.
 export { LegacyBanner } from './LegacyBanner'
 export { LegacyFaq } from './LegacyFaq'
 export { LegacyReviews } from './LegacyReviews'

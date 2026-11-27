@@ -19,13 +19,12 @@ export const germanCourse: LanguageCourseContent = {
     ],
   },
   why: {
-    subtitle: 'EuroGrades offers affordable German learning for a brighter future!',
+    subtitle: 'EuroRank offers affordable German learning for a brighter future!',
     features: [...commonFeatures, { icon: testIcon, label: 'TestDaF and DSH Preparation' }],
   },
   levels: {
     heading: 'German Language Learning Levels',
-    subtitle:
-      'Eurogrades offers structured courses to guide you through every step of the journey.',
+    subtitle: 'EuroRank offers structured courses to guide you through every step of the journey.',
     items: [
       {
         code: 'A1',
@@ -97,9 +96,9 @@ export const germanCourse: LanguageCourseContent = {
     ],
   },
   reviewsSubtitle:
-    'See what some of our students have to say about their German language learning experience with EuroGrades!',
+    'See what some of our students have to say about their German language learning experience with EuroRank!',
   reviewsCategory: 'german',
   faqCategory: 'german-language',
   faqSubtitle:
-    'From course details and eligibility to exams and career opportunities. Get clear, concise answers to help you make informed decisions about your language learning journey with Eurogrades!',
+    'From course details and eligibility to exams and career opportunities. Get clear, concise answers to help you make informed decisions about your language learning journey with EuroRank!',
 }

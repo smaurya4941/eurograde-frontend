@@ -22,7 +22,7 @@ import { useTeamMembers, type TeamMember } from '@/features/team'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
 function ProfessionalCard({ member }: { member: TeamMember }) {
-  const href = `${paths.team}/${member.slug}`
+  const href = paths.team
 
   return (
     <article className="group relative overflow-hidden rounded-2xl bg-ink-soft">

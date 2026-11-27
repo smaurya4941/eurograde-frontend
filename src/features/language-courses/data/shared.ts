@@ -11,7 +11,7 @@ import type { LanguageFeature } from '../types'
 
 export { prosImage, testIcon }
 
-/** The first seven "Why EuroGrades?" cards are identical on both language pages. */
+/** The first seven "Why EuroRank?" cards are identical on both language pages. */
 export const commonFeatures: LanguageFeature[] = [
   { icon: pricingIcon, label: 'Affordable Pricing' },
   { icon: friendlyIcon, label: 'Beginner Friendly' },

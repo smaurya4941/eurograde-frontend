@@ -6,10 +6,7 @@ import { ImageReveal, PillLink, Reveal, SectionHeading } from '@/components/mark
 
 export function AboutIntroSection() {
   return (
-    <section
-      aria-label="About EuroGrades"
-      className="relative overflow-hidden bg-surface section-y"
-    >
+    <section aria-label="About EuroRank" className="relative overflow-hidden bg-surface section-y">
       <div className="container-site grid items-center gap-14 lg:grid-cols-2 lg:gap-[50px]">
         {/* Photo + stat card */}
         <div className="relative pb-20 sm:pb-0">
@@ -46,7 +43,7 @@ export function AboutIntroSection() {
             className="animate-float pointer-events-none absolute -top-2 right-0 hidden w-[100px] sm:block"
           />
           <SectionHeading
-            badge="About EuroGrades"
+            badge="About EuroRank"
             title={[
               { text: 'Quality & Affordable Education Abroad, ' },
               { text: 'Made Simple', highlight: true },

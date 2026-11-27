@@ -84,9 +84,9 @@ export function AboutSection() {
         {/* Copy */}
         <div className="relative">
           <SectionHeading
-            badge="About EuroGrades"
+            badge="About EuroRank"
             title={[
-              { text: 'EuroGrades Makes Study Abroad ' },
+              { text: 'EuroRank Makes Study Abroad ' },
               { text: 'Simple, Affordable & Accessible', highlight: true },
             ]}
             description="We believe studying abroad should be accessible to everyone. That’s why we help students secure admission to the best public universities in top countries like Germany and Italy, without the burden of high tuition fees."
